@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "379395104026",
+    "firebase_url": "https://trebble-b578d.firebaseio.com",
+    "project_id": "trebble-b578d",
+    "storage_bucket": "trebble-b578d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:379395104026:android:bab9bb7c338b28f3",
+        "android_client_info": {
+          "package_name": "com.example.half_bloodprince.trebble"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "379395104026-i3bcvv74rl2dun930fgcibhvpjon5kg2.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.half_bloodprince.trebble",
+            "certificate_hash": "de9b42aab1f79b22beeda1e32bac74020432cde1"
+          }
+        },
+        {
+          "client_id": "379395104026-qh118rgvj22rlp0k97va41qiv2sbrsrm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCbO0cPOkImhgjJRO_vwiDTT-U7EUPgEMI"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "379395104026-qh118rgvj22rlp0k97va41qiv2sbrsrm.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
