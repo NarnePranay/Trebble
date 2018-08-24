@@ -5,7 +5,15 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 
+import java.io.BufferedReader;
+import java.io.DataOutputStream;
 import java.io.IOException;
+import java.io.InputStreamReader;
+import java.net.URL;
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.net.ssl.HttpsURLConnection;
 
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
@@ -27,6 +35,9 @@ public class MainActivity extends AppCompatActivity {
 
     }
 }
+
+
+
 
 class RetrieveFeedTask extends AsyncTask<String, Void, Void> {
 
