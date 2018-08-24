@@ -1,6 +1,7 @@
 package com.example.half_bloodprince.trebble;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -8,6 +9,7 @@ import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
+import android.support.v4.content.res.ResourcesCompat;
 import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -21,8 +23,11 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.half_bloodprince.trebble.Fragments.PageFragment;
+import com.leinardi.android.speeddial.SpeedDialActionItem;
+import com.leinardi.android.speeddial.SpeedDialView;
 
 public class Homeactivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -34,15 +39,10 @@ public class Homeactivity extends AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
 
+        fabButton();
+
+        //Navigation Layout
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
@@ -52,6 +52,9 @@ public class Homeactivity extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
+
+
+        //Tab Layout
         ViewPager viewPager = (ViewPager) findViewById(R.id.viewpager);
         viewPager.setAdapter(new SampleFragmentPagerAdapter(getSupportFragmentManager(),
                 Homeactivity.this));
@@ -60,6 +63,73 @@ public class Homeactivity extends AppCompatActivity
         TabLayout tabLayout = (TabLayout) findViewById(R.id.sliding_tabs);
         tabLayout.setupWithViewPager(viewPager);
     }
+
+
+    void fabButton()
+    {
+        SpeedDialView speedDialView = findViewById(R.id.speedDial);
+
+//        activity_homeactivity_drawer
+
+        speedDialView.addActionItem(
+                new SpeedDialActionItem.Builder(R.id.fab_support, R.drawable.ic_menu_camera)
+                        .setFabBackgroundColor(Color.TRANSPARENT)
+                        .setLabel("Support")
+                        .setLabelColor(Color.WHITE)
+                        .setLabelBackgroundColor(ResourcesCompat.getColor(getResources(), R.color.cardview_dark_background, getTheme()))
+                        .setLabelClickable(false)
+                        .create()
+        );
+
+        speedDialView.addActionItem(
+                new SpeedDialActionItem.Builder(R.id.fab_community, R.drawable.ic_menu_camera)
+                        .setFabBackgroundColor(Color.TRANSPARENT)
+                        .setLabel("Community")
+                        .setLabelColor(Color.WHITE)
+                        .setLabelBackgroundColor(ResourcesCompat.getColor(getResources(), R.color.cardview_dark_background, getTheme()))
+                        .setLabelClickable(false)
+                        .create()
+        );
+
+        speedDialView.addActionItem(
+                new SpeedDialActionItem.Builder(R.id.fab_news, R.drawable.ic_menu_camera)
+                        .setFabBackgroundColor(Color.TRANSPARENT)
+                        .setLabelColor(Color.WHITE)
+                        .setLabelBackgroundColor(ResourcesCompat.getColor(getResources(), R.color.cardview_dark_background, getTheme()))
+                        .setLabelClickable(false)
+                        .setLabel("News and Tips")
+                        .create()
+        );
+
+        speedDialView.addActionItem(
+                new SpeedDialActionItem.Builder(R.id.fab_issues, R.drawable.ic_menu_camera)
+                        .setFabBackgroundColor(ResourcesCompat.getColor(getResources(), R.color.colorAccent, getTheme()))
+                        .setFabImageTintColor(ResourcesCompat.getColor(getResources(), R.color.cardview_light_background, getTheme()))
+                        .setLabelColor(Color.WHITE)
+                        .setLabelBackgroundColor(ResourcesCompat.getColor(getResources(), R.color.cardview_dark_background, getTheme()))
+                        .setLabelClickable(false)
+                        .setLabel("Issues")
+                        .create()
+        );
+
+
+
+        speedDialView.setOnActionSelectedListener(new SpeedDialView.OnActionSelectedListener() {
+            @Override
+            public boolean onActionSelected(SpeedDialActionItem speedDialActionItem) {
+                switch (speedDialActionItem.getId()) {
+                    case R.id.fab_community:
+                        Toast.makeText(getApplicationContext(),"Community",Toast.LENGTH_LONG).show();
+                        return false; // true to keep the Speed Dial open
+                    default:
+                        return false;
+                }
+            }
+        });
+
+    }
+
+
 
     @Override
     public void onBackPressed() {
@@ -120,8 +190,8 @@ public class Homeactivity extends AppCompatActivity
 }
 
 class SampleFragmentPagerAdapter extends FragmentPagerAdapter {
-    final int PAGE_COUNT = 3;
-    private String tabTitles[] = new String[] { "Tab1", "Tab2", "Tab3" };
+    final int PAGE_COUNT = 4;
+    private String tabTitles[] = new String[] { "Home", "Support", "Community", "Issues" };
     private Context context;
 
     public SampleFragmentPagerAdapter(FragmentManager fm, Context context) {
