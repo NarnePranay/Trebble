@@ -9,6 +9,7 @@ import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v4.content.res.ResourcesCompat;
 import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
@@ -26,6 +27,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.half_bloodprince.trebble.Fragments.PageFragment;
+import com.example.half_bloodprince.trebble.Fragments.communityFragment;
 import com.leinardi.android.speeddial.SpeedDialActionItem;
 import com.leinardi.android.speeddial.SpeedDialView;
 
@@ -206,7 +208,24 @@ class SampleFragmentPagerAdapter extends FragmentPagerAdapter {
 
     @Override
     public Fragment getItem(int position) {
-        return PageFragment.newInstance(position + 1);
+
+        if(position==0)
+        {
+            return PageFragment.newInstance(1);
+        }
+        else if(position==1)
+        {
+            return PageFragment.newInstance(1);
+        }
+        else if(position==2)
+        {
+         return new communityFragment();
+        }
+        else
+        {
+            return PageFragment.newInstance(1);
+
+        }
     }
 
     @Override

@@ -1,0 +1,259 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.half_bloodprince.trebble.Fragments.communityFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+    <LinearLayout
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:weightSum="6"
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1.5"
+            android:orientation="vertical"
+            android:weightSum="1.5"
+            >
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:text="POPULAR TAGS"
+            android:gravity="center_vertical"
+            android:paddingLeft="20dp"
+            android:textSize="17sp"
+            android:textColor="#1e1d1d"
+
+
+            android:layout_marginBottom="5sp"
+            android:layout_weight=".4"/>
+
+          <LinearLayout
+              android:layout_width="match_parent"
+              android:layout_height="0dp"
+              android:layout_weight=".55"
+              android:orientation="horizontal"
+              android:weightSum="8">
+              <View
+                  android:layout_width="0sp"
+                  android:layout_height="match_parent"
+                  android:layout_weight=".8"/>
+
+              <RelativeLayout
+                  android:layout_width="0sp"
+                  android:layout_height="match_parent"
+                  android:layout_weight="2.2"
+                  >
+              <Button
+                  android:id="@+id/but1"
+                  android:layout_width="match_parent"
+                  android:layout_height="match_parent"
+                  android:layout_margin="5sp"
+                  android:layout_centerInParent="true"
+                  android:text="Snapdragon 845"
+                  android:textAllCaps="false"
+                  android:padding="5sp"
+
+                  android:textColor="#3bb7f5"
+                  android:textSize="12sp"
+                  android:minHeight="35dp"
+                  android:minWidth="50dp"
+
+                  android:background="@drawable/back_button"/>
+              </RelativeLayout>
+
+              <RelativeLayout
+                  android:layout_width="0sp"
+                  android:layout_height="match_parent"
+                  android:layout_weight="2.2"
+                  >
+                  <Button
+                      android:id="@+id/but2"
+                      android:layout_width="match_parent"
+                      android:layout_height="match_parent"
+                      android:layout_margin="5sp"
+                      android:layout_centerInParent="true"
+                      android:text="Display Problem"
+                      android:textAllCaps="false"
+                      android:textColor="#3bb7f5"
+                      android:padding="5sp"
+                      android:textSize="12sp"
+                      android:minHeight="35dp"
+                      android:minWidth="50dp"
+
+                      android:background="@drawable/back_button"/>
+              </RelativeLayout>
+              <RelativeLayout
+                  android:layout_width="0sp"
+                  android:layout_height="match_parent"
+                  android:layout_weight="2.2"
+                  >
+                  <Button
+                      android:id="@+id/but3"
+                      android:layout_width="match_parent"
+                      android:layout_height="match_parent"
+                      android:layout_margin="5sp"
+                      android:layout_centerInParent="true"
+                      android:text="Inspiron 5123"
+                      android:textAllCaps="false"
+                      android:padding="5sp"
+                      android:textColor="#3bb7f5"
+                      android:textSize="12sp"
+                      android:minHeight="35dp"
+                      android:minWidth="50dp"
+
+                      android:background="@drawable/back_button"/>
+              </RelativeLayout>
+
+              <View
+                  android:layout_width="0sp"
+                  android:layout_height="match_parent"
+                  android:layout_weight=".8"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight=".55"
+                android:orientation="horizontal"
+                android:weightSum="5.5">
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight=".25"/>
+                <RelativeLayout
+                    android:layout_width="0sp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    >
+                    <Button
+                        android:id="@+id/but11"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="5sp"
+                        android:layout_centerInParent="true"
+                        android:text="Blue Screen"
+                        android:textAllCaps="false"
+                        android:textColor="#3bb7f5"
+                        android:padding="5sp"
+                        android:textSize="12sp"
+                        android:minHeight="35dp"
+                        android:minWidth="50dp"
+
+                        android:background="@drawable/back_button"/>
+                </RelativeLayout>
+                <RelativeLayout
+                    android:layout_width="0sp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:layout_marginRight="5sp">
+                    <Button
+                        android:id="@+id/but12"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="5sp"
+                        android:layout_centerInParent="true"
+                        android:text="Samsung"
+                        android:textAllCaps="false"
+                        android:textColor="#3bb7f5"
+                        android:textSize="12sp"
+                        android:minHeight="35dp"
+                        android:minWidth="50dp"
+                        android:padding="5sp"
+                        android:background="@drawable/back_button"/>
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="0sp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                   >
+                    <Button
+                        android:id="@+id/but13"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="5sp"
+                        android:layout_centerInParent="true"
+                        android:text="Alien Ware"
+                        android:textAllCaps="false"
+                        android:textColor="#3bb7f5"
+                        android:textSize="12sp"
+                        android:minHeight="35dp"
+                        android:minWidth="50dp"
+                        android:padding="5sp"
+                        android:background="@drawable/back_button"/>
+                </RelativeLayout>
+                <RelativeLayout
+                    android:layout_width="0sp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    >
+                    <Button
+                        android:id="@+id/but14"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="5sp"
+                        android:layout_centerInParent="true"
+                        android:text="Heating"
+                        android:textAllCaps="false"
+                        android:textColor="#3bb7f5"
+                        android:textSize="12sp"
+                        android:minHeight="35dp"
+                        android:minWidth="50dp"
+                        android:padding="5sp"
+                        android:background="@drawable/back_button"/>
+                </RelativeLayout>
+                <RelativeLayout
+                    android:layout_width="0sp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    >
+                    <Button
+                        android:id="@+id/but15"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="5sp"
+                        android:layout_centerInParent="true"
+                        android:text="pixels"
+                        android:textAllCaps="false"
+                        android:textColor="#3bb7f5"
+                        android:textSize="12sp"
+                        android:minHeight="35dp"
+                        android:minWidth="50dp"
+                        android:padding="5sp"
+                        android:background="@drawable/back_button"/>
+                </RelativeLayout>
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight=".25"/>
+            </LinearLayout>
+        </LinearLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="4dp"
+            android:background="#f1eaea"
+            />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight=".4"
+            android:text="RECENT POSTS"
+            android:textColor="#1e1d1d"
+            android:textStyle="normal"
+            android:gravity="center_vertical"
+            android:textSize="17sp"
+            android:paddingLeft="20dp"/>
+        <ListView
+            android:id="@+id/community_List"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="4.1">
+
+        </ListView>
+
+    </LinearLayout>
+
+</FrameLayout>
