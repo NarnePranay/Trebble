@@ -37,6 +37,7 @@ public class Homeactivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_homeactivity);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        toolbar.setTitle("Trebble");
         setSupportActionBar(toolbar);
 
 
