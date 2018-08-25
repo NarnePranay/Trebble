@@ -25,6 +25,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.half_bloodprince.trebble.Fragments.MainFragment;
 import com.example.half_bloodprince.trebble.Fragments.PageFragment;
 import com.leinardi.android.speeddial.SpeedDialActionItem;
 import com.leinardi.android.speeddial.SpeedDialView;
@@ -198,6 +199,7 @@ class SampleFragmentPagerAdapter extends FragmentPagerAdapter {
     public SampleFragmentPagerAdapter(FragmentManager fm, Context context) {
         super(fm);
         this.context = context;
+
     }
 
     @Override
@@ -207,6 +209,10 @@ class SampleFragmentPagerAdapter extends FragmentPagerAdapter {
 
     @Override
     public Fragment getItem(int position) {
+        if(position==3){
+            return new MainFragment();
+        }
+
         return PageFragment.newInstance(position + 1);
     }
 
