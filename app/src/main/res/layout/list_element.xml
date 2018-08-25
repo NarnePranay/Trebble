@@ -18,7 +18,7 @@
         <ImageView
             android:id="@+id/galleryImage"
             android:layout_width="70dp"
-            android:layout_height="65dp" />
+            android:layout_height="80dp" />
     </LinearLayout>
 
     <LinearLayout
@@ -33,12 +33,16 @@
             android:shadowColor="#000"
             android:shadowRadius="1.0"
             android:textColor="#666666"
-            android:textSize="13sp"
+            android:textSize="14sp"
             android:layout_marginBottom="5dp"
             android:maxLines="2"
             android:scrollHorizontally="true"
             android:ellipsize="end"
             android:text="This is news title"/>
+
+        <Space
+            android:layout_width="1dp"
+            android:layout_height="10dp"/>
 
         <TextView
             android:id="@+id/sdetails"
@@ -51,6 +55,10 @@
             android:scrollHorizontally="true"
             android:ellipsize="end"
             android:text="This is news description bla bla bla..."/>
+
+        <Space
+            android:layout_width="1dp"
+            android:layout_height="12dp"/>
 
 
 
