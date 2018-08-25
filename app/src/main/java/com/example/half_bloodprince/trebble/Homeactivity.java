@@ -38,6 +38,7 @@ public class Homeactivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_homeactivity);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        toolbar.setTitle("Trebble");
         setSupportActionBar(toolbar);
 
 
@@ -211,7 +212,6 @@ class SampleFragmentPagerAdapter extends FragmentPagerAdapter {
         if(position==3){
             return new MainFragment();
         }
-
 
         return PageFragment.newInstance(position + 1);
     }
