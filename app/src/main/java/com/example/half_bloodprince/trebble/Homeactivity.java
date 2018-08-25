@@ -26,6 +26,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.half_bloodprince.trebble.Fragments.MainFragment;
 import com.example.half_bloodprince.trebble.Fragments.PageFragment;
 import com.example.half_bloodprince.trebble.Fragments.communityFragment;
 import com.leinardi.android.speeddial.SpeedDialActionItem;
@@ -39,6 +40,7 @@ public class Homeactivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_homeactivity);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        toolbar.setTitle("Trebble");
         setSupportActionBar(toolbar);
 
 
@@ -199,6 +201,7 @@ class SampleFragmentPagerAdapter extends FragmentPagerAdapter {
     public SampleFragmentPagerAdapter(FragmentManager fm, Context context) {
         super(fm);
         this.context = context;
+
     }
 
     @Override
@@ -221,11 +224,15 @@ class SampleFragmentPagerAdapter extends FragmentPagerAdapter {
         {
          return new communityFragment();
         }
+        else if(position==3){
+            return new MainFragment();
+        }
         else
         {
             return PageFragment.newInstance(1);
 
         }
+
     }
 
     @Override
