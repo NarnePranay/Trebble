@@ -1,110 +1,163 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:weightSum="15">
+    <RelativeLayout
+        android:layout_height="0dp"
+        android:layout_width="match_parent"
+        android:layout_weight="13.75"
+    >
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/my_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        android:elevation="1dp"
+        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+       />
+
+    <ScrollView
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fillViewport="true"
     android:scrollbars="vertical"
-    xmlns:android="http://schemas.android.com/apk/res/android">
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".PostsActivity">
-    <LinearLayout
-        android:id="@+id/titleLayout"
-        android:orientation="vertical"
+        android:layout_below="@+id/my_toolbar">
+
+  <RelativeLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:orientation="vertical">
+
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/Post"
         android:layout_width="match_parent"
+        app:cardElevation="2dp"
+        android:background="#ffffff"
         android:layout_height="wrap_content">
-        <android.support.v4.widget.Space
-            android:layout_above="@+id/title"
+
+      <RelativeLayout
+
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:orientation="vertical">
+
+          <TextView
+              android:id="@+id/ques_post"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:textSize="17sp"
+              android:layout_marginLeft="10dp"
+              android:layout_marginBottom="5dp"
+              android:layout_marginTop="10dp"
+              android:text="Question: Help to Fix Blue Screen"
+              android:textColor="#453a36"
+              />
+         <RelativeLayout
+             android:id="@+id/relpost"
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:layout_below="@+id/ques_post"
+             android:layout_marginLeft="10dp">
+              <TextView
+                  android:id="@+id/UserName_post"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:layout_marginRight="2dp"
+                  android:text="SrikarKok"
+
+                  android:textColor="#617070"/>
+              <View
+                  android:id="@+id/d1_post"
+                  android:layout_width="10dp"
+                  android:layout_height="10dp"
+                  android:layout_toRightOf="@+id/UserName_post"
+                  android:layout_marginRight="2dp"
+
+                  />
+              <TextView
+                  android:id="@+id/date_post"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:layout_marginRight="2dp"
+                  android:text="12/01/2018"
+                  android:layout_toRightOf="@id/d1_post"
+                  android:textColor="#96b3a6"/>
+              <View
+                  android:id="@+id/d2_post"
+                  android:layout_width="10dp"
+                  android:layout_height="10dp"
+                  android:layout_marginRight="2dp"
+                  android:layout_toRightOf="@+id/date_post"
+
+                  />
+              <TextView
+                  android:id="@+id/views_post"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:layout_marginRight="2dp"
+                  android:layout_marginBottom="5dp"
+                  android:text="21 views"
+                  android:layout_toRightOf="@id/d2_post"
+                  android:textColor="#96b3a6"/>
+
+         </RelativeLayout>
+
+          <View
+              android:id="@+id/v1"
+              android:layout_width="match_parent"
+              android:layout_height="1dp"
+              android:layout_marginLeft="10dp"
+              android:layout_marginBottom="10dp"
+              android:background="#f0f2f1"
+              android:layout_below="@+id/relpost"/>
+          <TextView
+              android:id="@+id/ques_post_des"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:layout_margin="15dp"
+              android:layout_below="@+id/v1"
+              android:text="It means there is a compilation error in your XML file, something that shouldn't be there: a spelling mistake/a spurious character/an incorrect namespace."
+              />
+          <View
+              android:id="@+id/v2"
+              android:layout_width="match_parent"
+              android:layout_height="1dp"
+              android:layout_marginLeft="10dp"
+              android:layout_marginBottom="10dp"
+              android:background="#f0f2f1"
+              android:layout_below="@+id/ques_post_des"/>
+        <TextView
+            android:id="@+id/t1"
             android:layout_width="wrap_content"
-            android:layout_height="20dp" />
-
-        <TextView
-            android:id="@+id/title"
-            android:text="[ERROR]  Title of the Problem"
-            android:gravity="left"
-            android:layout_margin="5sp"
-            android:textSize="17sp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-        <android.support.v4.widget.Space
-            android:layout_above="@+id/title"
-            android:layout_width="wrap_content"
-            android:layout_height="2dp" />
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:layout_below="@+id/title"
-            android:layout_margin="3sp"
-            android:background="@android:color/darker_gray"/>
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/contentLayout"
-        android:orientation="vertical"
-        android:layout_below="@id/titleLayout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="10dp" />
-        <TextView
-            android:id="@+id/content"
-            android:text="My Laptop is facing display and Charging issues please help me resolve this issue"
-            android:gravity="left"
-            android:layout_margin="6sp"
-            android:textSize="15sp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="30dp" />
-
-
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:layout_margin="3sp"
-            android:background="@android:color/darker_gray"/>
-
-
-
-    </LinearLayout>
-    <LinearLayout
-        android:layout_below="@+id/contentLayout"
-        android:id="@+id/tagsLayout"
-        android:orientation="vertical"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        <TextView
-            android:id="@+id/titleTags"
-            android:layout_above="@id/space"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:layout_below="@+id/v2"
             android:text="Tags"
-            android:gravity="left"
-            android:layout_margin="5sp"
-            android:textSize="17sp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_marginLeft="10dp"
+            android:textColor="#5b5e5d"
+            android:layout_marginBottom="10dp"/>
 
-        <Space
-            android:id="@+id/space"
-            android:layout_above="@id/horizontal_recycler_view"
-            android:layout_width="match_parent"
-            android:layout_height="15dp" />
         <android.support.v7.widget.RecyclerView
             android:id="@+id/horizontal_recycler_view"
-            android:layout_below="@id/contentLayout"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:layout_below="@id/t1"
+            android:layout_marginLeft="10dp"
+            android:layout_marginBottom="5dp"
+            />
 
-    </LinearLayout>
+      </RelativeLayout>
 
+</android.support.v7.widget.CardView>
 
     <LinearLayout
         android:id="@+id/CommentsLayout"
-        android:layout_below="@+id/tagsLayout"
+        android:layout_below="@+id/Post"
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
@@ -120,17 +173,55 @@
             android:text="Comments"
             android:gravity="left"
             android:layout_margin="5sp"
-            android:textSize="17sp"
+            android:textSize="18sp"
+            android:textColor="#5b5e5d"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
-        <ListView
+
+        <com.example.half_bloodprince.trebble.NonScrollListView
             android:id="@+id/myList"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
-
-        </ListView>
+        </com.example.half_bloodprince.trebble.NonScrollListView>
 
     </LinearLayout>
 
-</RelativeLayout>
+
+
+  </RelativeLayout>
 </ScrollView>
+
+
+</RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1.25"
+        android:background="#ffffff"
+
+        >
+        <EditText
+            android:id="@+id/Comment_edit"
+            android:layout_width="match_parent"
+            android:background="@drawable/edit_customn"
+            android:layout_height="match_parent"
+            android:hint="Enter Text here"
+            android:paddingLeft="10sp"
+            android:layout_margin="5dp"
+
+            />
+        <Button
+            android:id="@+id/send_cmmnt"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:minWidth="30dp"
+            android:layout_marginRight="15dp"
+            android:layout_weight="1"
+            android:layout_alignParentRight="true"
+            android:drawableRight="@drawable/send"
+            android:background="@null"
+
+
+            />
+    </RelativeLayout>
+</LinearLayout>

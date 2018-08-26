@@ -16,7 +16,7 @@
             android:layout_height="0dp"
             android:layout_weight="1.5"
             android:orientation="vertical"
-            android:weightSum="1.5"
+            android:weightSum="1.6"
             >
         <TextView
             android:layout_width="match_parent"
@@ -153,7 +153,7 @@
                     android:layout_width="0sp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:layout_marginRight="5sp">
+                    >
                     <Button
                         android:id="@+id/but12"
                         android:layout_width="match_parent"
@@ -214,6 +214,7 @@
                         android:fontFamily="@font/ralewayextrabold"
 
                         android:background="@drawable/roundedbtn"/>
+                        android:background="@drawable/back_button"/>
                 </RelativeLayout>
                 <RelativeLayout
                     android:layout_width="0sp"
@@ -236,6 +237,7 @@
                         android:minWidth="50dp"
                         android:padding="1dp"
                         android:background="@drawable/roundedbtn"/>
+                        android:background="@drawable/back_button"/>
                 </RelativeLayout>
                 <View
                     android:layout_width="0dp"
@@ -249,7 +251,7 @@
             android:background="#f1eaea"
             />
         <TextView
-            android:layout_marginTop="15dp"
+            android:layout_marginTop="5dp"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight=".4"
@@ -260,6 +262,10 @@
             android:textSize="17sp"
             android:paddingLeft="20dp"
             android:fontFamily="@font/ralewaysemibold"/>
+            android:paddingLeft="20dp"/>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="5sp"/>
         <ListView
             android:id="@+id/community_List"
             android:layout_width="match_parent"

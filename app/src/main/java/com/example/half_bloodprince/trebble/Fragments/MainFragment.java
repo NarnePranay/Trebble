@@ -14,7 +14,7 @@ import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.example.half_bloodprince.trebble.DetailsActivity;
-import com.example.half_bloodprince.trebble.ListNewsAdapter;
+import com.example.half_bloodprince.trebble.Adapters.ListNewsAdapter;
 import com.example.half_bloodprince.trebble.NewsUtility;
 import com.example.half_bloodprince.trebble.R;
 

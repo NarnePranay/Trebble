@@ -1,4 +1,4 @@
-package com.example.half_bloodprince.trebble.POJO;
+package com.example.half_bloodprince.trebble.Adapters;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
@@ -12,7 +12,7 @@ import com.example.half_bloodprince.trebble.R;
 
 import java.util.List;
 
-class HorizontalAdapter extends RecyclerView.Adapter<HorizontalAdapter.MyViewHolder> {
+public class HorizontalAdapter extends RecyclerView.Adapter<HorizontalAdapter.MyViewHolder> {
     List<String> horizontalList ;
     Context context;
 
