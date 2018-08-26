@@ -1,4 +1,4 @@
-package com.example.half_bloodprince.trebble;
+package com.example.half_bloodprince.trebble.Adapters;
 
 import android.app.Activity;
 import android.view.LayoutInflater;
@@ -9,6 +9,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.half_bloodprince.trebble.Fragments.MainFragment;
+import com.example.half_bloodprince.trebble.R;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
