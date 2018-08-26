@@ -29,22 +29,14 @@
                 android:layout_marginTop="3sp"
                 android:textColor="#000000"
                 android:textSize="16sp"
+                android:gravity="center_vertical"
                 android:text="This is the frequently asked Question?"
-                android:layout_weight="2"
+                android:layout_weight="5"
                 android:layout_width="wrap_content"
                 android:layout_height="0dp" />
 
 
-        <TextView
-            android:id="@+id/txt2"
-            android:layout_width="wrap_content"
-            android:textSize="14sp"
-            android:textColor="#020202"
-            android:layout_height="0dp"
-            android:layout_margin="3sp"
-            android:layout_weight="3"
-            android:text="My Laptop is heating up too much and the processor is making sound what should i do about it?"
-             />
+
 
         </LinearLayout>
 
