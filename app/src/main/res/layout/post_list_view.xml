@@ -18,6 +18,7 @@
         android:textColor="#020202"
         android:layout_marginTop="8dp"
         android:layout_marginBottom="10dp"
+        android:fontFamily="@font/ralewaysemibold"
 
     />
     <RelativeLayout
@@ -32,7 +33,7 @@
             android:layout_height="match_parent"
             android:layout_marginRight="2dp"
             android:text="SrikarKok"
-
+            android:fontFamily="@font/ralewaylight"
             android:textColor="#96b3a6"/>
        <View
            android:id="@+id/d1"

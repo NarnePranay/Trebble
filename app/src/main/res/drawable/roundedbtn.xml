@@ -8,7 +8,7 @@
         android:color="@android:color/transparent" />
 
     <stroke
-        android:color="#9b8f8f"
+        android:color="#49ace1"
         android:width="0.1dp" />
 
     <size
@@ -16,3 +16,5 @@
         android:height="30dp" />
 
 </shape>
+
+<!--9b8f8f-->
