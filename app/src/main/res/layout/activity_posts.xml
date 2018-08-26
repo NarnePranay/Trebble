@@ -4,6 +4,7 @@
     android:layout_width="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
+    android:background="#ffffff"
     android:weightSum="15">
     <RelativeLayout
         android:layout_height="0dp"
@@ -15,7 +16,7 @@
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
         android:background="?attr/colorPrimary"
-        android:elevation="1dp"
+        android:elevation="0dp"
         android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
         app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
        />
@@ -36,7 +37,7 @@
     <android.support.v7.widget.CardView
         android:id="@+id/Post"
         android:layout_width="match_parent"
-        app:cardElevation="2dp"
+        app:cardElevation="0dp"
         android:background="#ffffff"
         android:layout_height="wrap_content">
 
@@ -177,6 +178,12 @@
             android:textColor="#5b5e5d"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#f0f2f1"
+            android:layout_marginLeft="10dp"
+            android:layout_marginBottom="5dp"/>
 
         <com.example.half_bloodprince.trebble.NonScrollListView
             android:id="@+id/myList"
@@ -195,7 +202,7 @@
 </RelativeLayout>
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="55dp"
+        android:layout_height="50dp"
 
         android:background="#ffffff"
 
@@ -208,7 +215,7 @@
             android:hint="Enter Text here"
             android:paddingLeft="10sp"
             android:layout_margin="5dp"
-
+            android:textSize="18sp"
             />
         <Button
             android:id="@+id/send_cmmnt"
@@ -218,7 +225,7 @@
             android:layout_marginRight="15dp"
             android:layout_weight="1"
             android:layout_alignParentRight="true"
-            android:drawableRight="@drawable/send"
+            android:drawableRight="@drawable/ic_menu_send"
             android:background="@null"
 
 

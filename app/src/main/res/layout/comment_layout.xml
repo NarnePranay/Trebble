@@ -16,7 +16,7 @@
         android:id="@+id/Comment"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text=" Stop errors (also sometimes called blue screen or black screen errors) can occur if a serious problem causes Windows 7 to shut down or restart unexpectedly. These errors can be caused by both hardware and software issues, and it can be difficult to troubleshoot the problem "
+        android:text="Stop errors (also sometimes called blue screen or black screen errors) can occur if a serious problem causes Windows 7 to shut down or restart unexpectedly. These errors can be caused by both hardware and software issues, and it can be difficult to troubleshoot the problem "
         android:gravity="center_vertical"
         android:paddingLeft="15dp"
         android:layout_marginTop="8dp"
@@ -55,21 +55,7 @@
             android:text="12/01/2018"
             android:layout_toRightOf="@id/d1_Cmnt"
             android:textColor="#96b3a6"/>
-        <View
-            android:id="@+id/d2_Cmnt"
-            android:layout_width="10dp"
-            android:layout_height="10dp"
-            android:layout_marginRight="2dp"
-            android:layout_toRightOf="@+id/date_Cmnt"
 
-            />
-        <TextView
-            android:id="@+id/views_cmnt"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginRight="2dp"
-            android:text="21 views"
-            android:layout_toRightOf="@id/d2_Cmnt"
             android:textColor="#96b3a6"/>
     </RelativeLayout>
       </RelativeLayout>
