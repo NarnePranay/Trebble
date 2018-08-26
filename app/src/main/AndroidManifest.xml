@@ -17,16 +17,23 @@
             android:label="@string/title_activity_homeactivity"
             android:theme="@style/AppTheme.NoActionBar">
 
+
+
+
+        </activity>
+        <activity android:name=".DetailsActivity"></activity>
+        <activity android:name=".POJO.PostsActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
-
         </activity>
+<<<<<<< HEAD
         <activity android:name=".DetailsActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"></activity>
+=======
+>>>>>>> bcf7f93761193fb28c0ab26816c8cfeff9e20982
     </application>
 
 </manifest>

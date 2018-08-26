@@ -9,6 +9,7 @@ import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v4.content.res.ResourcesCompat;
 import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
@@ -27,7 +28,11 @@ import android.widget.Toast;
 
 import com.example.half_bloodprince.trebble.Fragments.MainFragment;
 import com.example.half_bloodprince.trebble.Fragments.PageFragment;
+<<<<<<< HEAD
 import com.example.half_bloodprince.trebble.Fragments.SupportFragment;
+=======
+import com.example.half_bloodprince.trebble.Fragments.communityFragment;
+>>>>>>> bcf7f93761193fb28c0ab26816c8cfeff9e20982
 import com.leinardi.android.speeddial.SpeedDialActionItem;
 import com.leinardi.android.speeddial.SpeedDialView;
 
@@ -210,6 +215,7 @@ class SampleFragmentPagerAdapter extends FragmentPagerAdapter {
 
     @Override
     public Fragment getItem(int position) {
+<<<<<<< HEAD
 
 
         switch (position){
@@ -221,6 +227,31 @@ class SampleFragmentPagerAdapter extends FragmentPagerAdapter {
         return PageFragment.newInstance(position + 1);
 
          }
+=======
+
+        if(position==0)
+        {
+            return PageFragment.newInstance(1);
+        }
+        else if(position==1)
+        {
+            return PageFragment.newInstance(1);
+        }
+        else if(position==2)
+        {
+         return new communityFragment();
+        }
+        else if(position==3){
+            return new MainFragment();
+        }
+        else
+        {
+            return PageFragment.newInstance(1);
+
+        }
+
+    }
+>>>>>>> bcf7f93761193fb28c0ab26816c8cfeff9e20982
 
     @Override
     public CharSequence getPageTitle(int position) {
