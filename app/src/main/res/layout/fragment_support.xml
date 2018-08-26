@@ -13,13 +13,139 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="3">
+            android:layout_weight="2.8"
+            >
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <TextView
+                    android:layout_marginTop="25dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="We're here to help !"
+                    android:fontFamily="@font/ralewayextrabold"
+                    android:textAlignment="center"
+                    android:textSize="24sp"/>
+                <ImageView
+                    android:id="@+id/laptop_img"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/laptop2"
+                    android:layout_centerInParent="true"/>
+                <TextView
+                    android:id="@+id/laptop_name"
+                    android:layout_below="@+id/laptop_img"
+                    android:layout_centerInParent="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Inspiron 15 7570"
+                    android:textStyle="bold"
+                    android:textSize="18sp"/>
+                <TextView
+                    android:layout_centerInParent="true"
+                    android:layout_margin="10dp"
+                    android:textAlignment="center"
+                    android:layout_below="@+id/laptop_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/ralewaylight"
+                    android:text="Share your feedback and get help from Customer Service for your product"/>
+            </RelativeLayout>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.4"
+            android:weightSum="2">
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Feedback list"
+                android:textAlignment="center"
+                android:background="@drawable/roundedbtn"
+                android:layout_marginRight="8dp"/>
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Send feedback"
+                android:textAlignment="center"
+                android:background="@drawable/roundedbtn"/>
 
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="2">
+            android:layout_weight="2"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:weightSum="2"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="20dp">
+                <Button
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:drawableLeft="@drawable/faq32"
+                    android:text="  FAQ's"
+                    android:textAllCaps="false"
+                    android:fontFamily="@font/ralewaymedium"
+                    android:textAlignment="textStart"
+                    android:background="@android:color/transparent"
+                    android:layout_gravity="start" />
+                <Button
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:drawableLeft="@drawable/location"
+                    android:text="   Service Centres"
+                    android:textAllCaps="false"
+                    android:fontFamily="@font/ralewaymedium"
+                    android:textAlignment="textStart"
+                    android:background="@android:color/transparent"
+                    android:layout_gravity="start" />
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:weightSum="2"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp">
+                <Button
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:drawableLeft="@drawable/callcenter"
+                    android:text=" Customer Care"
+                    android:textAllCaps="false"
+                    android:fontFamily="@font/ralewaymedium"
+                    android:textAlignment="textStart"
+                    android:background="@android:color/transparent"
+                    android:layout_gravity="start" />
+                <Button
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:drawableLeft="@drawable/chat"
+                    android:text="   Live Chat"
+                    android:textAllCaps="false"
+                    android:fontFamily="@font/ralewaymedium"
+                    android:textAlignment="textStart"
+                    android:background="@android:color/transparent"
+                    android:layout_gravity="start" />
+
+            </LinearLayout>
 
         </LinearLayout>
 

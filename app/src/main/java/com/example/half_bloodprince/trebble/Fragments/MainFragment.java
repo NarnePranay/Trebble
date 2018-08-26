@@ -44,6 +44,7 @@ public class MainFragment extends Fragment {
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container,Bundle savedInstanceState) {
         // Inflate the layout for this fragment
+        dataList.clear();
         View view=inflater.inflate(R.layout.fragment_news,container,false);
         listNews = (ListView) view.findViewById(R.id.listNews);
         loader = (ProgressBar) view.findViewById(R.id.loader);

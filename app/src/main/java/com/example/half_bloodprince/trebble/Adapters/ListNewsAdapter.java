@@ -69,7 +69,7 @@ public class ListNewsAdapter extends BaseAdapter {
             {
                 holder.galleryImage.setVisibility(View.GONE);
             }else{
-                Picasso.with(activity).load(song.get(MainFragment.KEY_URLTOIMAGE).toString()).resize(300, 350).into(holder.galleryImage);
+                Picasso.with(activity).load(song.get(MainFragment.KEY_URLTOIMAGE).toString()).resize(300, 400).into(holder.galleryImage);
             }
         }catch(Exception e) {}
         return convertView;
