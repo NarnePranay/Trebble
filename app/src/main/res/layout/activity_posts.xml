@@ -8,7 +8,7 @@
     <RelativeLayout
         android:layout_height="0dp"
         android:layout_width="match_parent"
-        android:layout_weight="13.75"
+        android:layout_weight="15"
     >
     <android.support.v7.widget.Toolbar
         android:id="@+id/my_toolbar"
@@ -195,8 +195,8 @@
 </RelativeLayout>
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1.25"
+        android:layout_height="55dp"
+
         android:background="#ffffff"
 
         >
