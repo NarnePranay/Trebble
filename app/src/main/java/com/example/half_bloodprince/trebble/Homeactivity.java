@@ -27,6 +27,7 @@ import android.widget.Toast;
 
 import com.example.half_bloodprince.trebble.Fragments.MainFragment;
 import com.example.half_bloodprince.trebble.Fragments.PageFragment;
+import com.example.half_bloodprince.trebble.Fragments.SupportFragment;
 import com.leinardi.android.speeddial.SpeedDialActionItem;
 import com.leinardi.android.speeddial.SpeedDialView;
 
@@ -42,7 +43,7 @@ public class Homeactivity extends AppCompatActivity
         setSupportActionBar(toolbar);
 
 
-        fabButton();
+        //fabButton();
 
         //Navigation Layout
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -66,7 +67,7 @@ public class Homeactivity extends AppCompatActivity
         tabLayout.setupWithViewPager(viewPager);
     }
 
-
+/*
     void fabButton()
     {
         SpeedDialView speedDialView = findViewById(R.id.speedDial);
@@ -132,7 +133,7 @@ public class Homeactivity extends AppCompatActivity
     }
 
 
-
+*/
     @Override
     public void onBackPressed() {
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -193,7 +194,7 @@ public class Homeactivity extends AppCompatActivity
 
 class SampleFragmentPagerAdapter extends FragmentPagerAdapter {
     final int PAGE_COUNT = 4;
-    private String tabTitles[] = new String[] { "Home", "Support", "Community", "Issues" };
+    private String tabTitles[] = new String[] { "Home", "Support", "Community", "News" };
     private Context context;
 
     public SampleFragmentPagerAdapter(FragmentManager fm, Context context) {
@@ -209,12 +210,17 @@ class SampleFragmentPagerAdapter extends FragmentPagerAdapter {
 
     @Override
     public Fragment getItem(int position) {
-        if(position==3){
-            return new MainFragment();
-        }
 
+
+        switch (position){
+            case 0: return PageFragment.newInstance(position + 1);
+            case 1: return new SupportFragment();
+            case 2: return PageFragment.newInstance(position + 1);
+            case 3: return new MainFragment();
+        }
         return PageFragment.newInstance(position + 1);
-    }
+
+         }
 
     @Override
     public CharSequence getPageTitle(int position) {
