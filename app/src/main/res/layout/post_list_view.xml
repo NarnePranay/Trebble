@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+
+    >
+
+    <TextView
+        android:id="@+id/question"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="[Question] Blue Screen Problem??"
+        android:maxLines="1"
+        android:textSize="15sp"
+        android:gravity="center_vertical"
+        android:paddingLeft="15dp"
+        android:textColor="#020202"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="10dp"
+
+    />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="20sp"
+        android:layout_marginBottom="10dp"
+        >
+        <TextView
+            android:id="@+id/UserName"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginRight="2dp"
+            android:text="SrikarKok"
+
+            android:textColor="#96b3a6"/>
+       <View
+           android:id="@+id/d1"
+           android:layout_width="10sp"
+           android:layout_height="match_parent"
+           android:layout_toRightOf="@+id/UserName"
+           android:layout_marginRight="2dp"
+
+           />
+        <TextView
+            android:id="@+id/date"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginRight="2dp"
+            android:text="12/01/2018"
+            android:layout_toRightOf="@id/d1"
+            android:textColor="#96b3a6"/>
+        <View
+            android:id="@+id/d2"
+            android:layout_width="10sp"
+            android:layout_height="match_parent"
+            android:layout_marginRight="2dp"
+            android:layout_toRightOf="@+id/date"
+
+            />
+        <TextView
+            android:id="@+id/views"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginRight="2dp"
+            android:text="21 views"
+            android:layout_toRightOf="@id/d2"
+            android:textColor="#96b3a6"/>
+
+    </RelativeLayout>
+
+</LinearLayout>
