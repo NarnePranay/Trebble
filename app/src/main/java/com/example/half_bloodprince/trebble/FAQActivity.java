@@ -1,7 +1,10 @@
 package com.example.half_bloodprince.trebble;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
 import com.example.half_bloodprince.trebble.Adapters.FAQAdapter;
@@ -20,6 +23,16 @@ public class FAQActivity extends AppCompatActivity {
         lv1=(ListView)findViewById(R.id.myList);
         adapter=new FAQAdapter(getApplicationContext(),Questions,Answer,images);
         lv1.setAdapter(adapter);
+        getSupportActionBar().setTitle("FAQ");
+        lv1.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Intent intent=new Intent(getApplicationContext(), FAQAnsActivity.class);
+                intent.putExtra("Ans",Answer[position]);
+                intent.putExtra("Qn",Questions[position]);
+                startActivity(intent);
+            }
+        });
 
     }
 }
