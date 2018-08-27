@@ -54,6 +54,8 @@ public class PostsActivity extends AppCompatActivity {
         views.setText(post.getViews()+" Views");
         TextView descrip=(TextView)findViewById(R.id.ques_post_des);
         descrip.setText(post.getBody());
+        TextView com=(TextView)findViewById(R.id.titleComments);
+        com.setText("Comments ("+post.getReply_count()+")");
         ArrayList<String> input=new ArrayList<String>();
         for(int i=0;i<str.length;i++)
         {
