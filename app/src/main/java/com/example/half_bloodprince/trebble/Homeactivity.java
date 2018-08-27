@@ -12,6 +12,7 @@ import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.content.res.ResourcesCompat;
 import android.support.v4.view.ViewPager;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.support.design.widget.NavigationView;
@@ -26,17 +27,42 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonObjectRequest;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
 import com.example.half_bloodprince.trebble.Fragments.MainFragment;
 import com.example.half_bloodprince.trebble.Fragments.PageFragment;
 import com.example.half_bloodprince.trebble.Fragments.SupportFragment;
 import com.example.half_bloodprince.trebble.Fragments.communityFragment;
 
+import com.example.half_bloodprince.trebble.POJO.PostBasic;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.reflect.TypeToken;
 import com.leinardi.android.speeddial.SpeedDialActionItem;
 import com.leinardi.android.speeddial.SpeedDialView;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+
 public class Homeactivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
-
+   public static ArrayList <PostBasic >postsArr=new ArrayList<>();
+   public static ArrayList <String >postsArr1=new ArrayList<>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -44,6 +70,7 @@ public class Homeactivity extends AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         toolbar.setTitle("Trebble");
         setSupportActionBar(toolbar);
+        getPosts();
 
 
         //fabButton();
@@ -193,6 +220,52 @@ public class Homeactivity extends AppCompatActivity
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
+    public void getPosts()
+    {
+        RequestQueue queue = Volley.newRequestQueue(Homeactivity.this);
+        final String url = "https://trebble-b578d.firebaseio.com/shortPosts.json?orderBy=%22$key%22&limitToFirst=10";
+        StringRequest stringRequest = new StringRequest(Request.Method.GET, url,
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        Log.d("response",response);
+                        try {
+                            JSONObject object = new JSONObject(response);
+                            Iterator<String> iterator = object.keys();
+                            int count=0;
+                            while (iterator.hasNext()) {
+                                JSONObject obj = object.getJSONObject(iterator.next());
+                                Gson gson=new Gson();
+                                postsArr.add(gson.fromJson(obj.toString(),PostBasic.class));
+                                Log.d("TAG", obj.toString());
+                                Log.d("lol",postsArr.get(count).getName());
+                                count++;
+                            }
+                            iterator=object.keys();
+                            for(int i=0;i<count;i++)
+                            {
+                                postsArr1.add(iterator.next());
+                                Log.d("hey",postsArr1.get(i));
+                            }
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+
+
+                    }
+                }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                Log.e("place", "That didn't work!");
+            }
+        });
+
+    queue.add(stringRequest);
+    Log.d("size",postsArr.size()+"");
+// Access the RequestQueue through your singleton class.
+
+
+    }
 }
 
 class SampleFragmentPagerAdapter extends FragmentPagerAdapter {
@@ -218,7 +291,13 @@ class SampleFragmentPagerAdapter extends FragmentPagerAdapter {
         switch (position){
             case 0: return PageFragment.newInstance(position + 1);
             case 1: return new SupportFragment();
-            case 2: return new communityFragment();
+
+            case 2:
+                //communityFragment cf=new communityFragment();
+                //Bundle bundle=new Bundle();
+                //bundle.putSerializable("postArr",postsArr);
+
+                return new communityFragment();
             case 3: return new MainFragment();
         }
         return PageFragment.newInstance(position + 1);
@@ -231,6 +310,8 @@ class SampleFragmentPagerAdapter extends FragmentPagerAdapter {
         // Generate title based on item position
         return tabTitles[position];
     }
+
+
 }
 
 
