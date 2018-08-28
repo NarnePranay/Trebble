@@ -52,12 +52,15 @@
                 <action android:name="android.intent.action.MAIN" />
             </intent-filter>
 
+<<<<<<< HEAD
 
         </activity>
         <activity android:name=".Activities.FeedBackActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar">
 
         </activity>
+=======
+>>>>>>> 8ae6342369ce058ec55ca3bfac08b1f35c505159
         </activity>
         <activity android:name=".DetailsActivity" />
         <activity
@@ -71,7 +74,11 @@
              Note that the API key is linked to the encryption key used to sign the APK.
              You need a different API key for each encryption key, including the release key that is used to
              sign the APK for publishing.
+<<<<<<< HEAD
              You can define the keys for the debug and release targets in src/debug/ and src/release/.
+=======
+             You can define the keys for the debug and release targets in src/debug/ and src/release/.
+>>>>>>> 8ae6342369ce058ec55ca3bfac08b1f35c505159
         -->
         <meta-data
             android:name="com.google.android.geo.API_KEY"
