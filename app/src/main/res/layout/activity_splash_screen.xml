@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.half_bloodprince.trebble.Activities.SplashScreenActivity">
+
+    <ImageView
+        android:id="@+id/img_dell"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/dell"
+        android:layout_centerInParent="true"/>
+
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_alignLeft="@+id/img_dell"
+        android:layout_alignStart="@+id/img_dell"
+        android:layout_alignTop="@+id/img_dell"
+        android:layout_marginLeft="251dp"
+        android:layout_marginStart="251dp"
+        android:layout_marginTop="32dp"
+        android:src="@drawable/splash_logo_anim" />
+
+
+</RelativeLayout>

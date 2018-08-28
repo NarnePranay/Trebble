@@ -15,19 +15,38 @@
         <activity
             android:name=".Homeactivity"
             android:label="@string/title_activity_homeactivity"
-            android:theme="@style/AppTheme.NoActionBar">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".DetailsActivity" />
         <activity
             android:name=".PostsActivity"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
-        <activity android:name=".FAQActivity"></activity>
-        <activity android:name=".FAQAnsActivity"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".FAQActivity"
+            android:label="FAQ&apos;s"
+            android:parentActivityName=".Homeactivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity
+            android:name=".FAQAnsActivity"
+            android:label="Answer"
+            android:parentActivityName=".FAQActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity
+            android:name=".Activities.SplashScreenActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+
+
+            <intent-filter>
+                <category android:name="android.intent.category.LAUNCHER" />
+
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
+
+        </activity>
+        <activity android:name=".Activities.FeedBackActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+
+        </activity>
     </application>
 
 </manifest>

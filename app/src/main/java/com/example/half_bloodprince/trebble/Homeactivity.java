@@ -1,6 +1,7 @@
 package com.example.half_bloodprince.trebble;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -94,7 +95,11 @@ public class Homeactivity extends AppCompatActivity
 
         // Give the TabLayout the ViewPager
         TabLayout tabLayout = (TabLayout) findViewById(R.id.sliding_tabs);
+
         tabLayout.setupWithViewPager(viewPager);
+
+
+
     }
 
 /*
@@ -204,11 +209,19 @@ public class Homeactivity extends AppCompatActivity
 
         if (id == R.id.nav_camera) {
             // Handle the camera action
+            Log.d("TAG", "onNavigationItemSelected: camera");
+            ViewPager viewPager = (ViewPager) findViewById(R.id.viewpager);
+            viewPager.setCurrentItem(1);
         } else if (id == R.id.nav_gallery) {
+            ViewPager viewPager = (ViewPager) findViewById(R.id.viewpager);
+            viewPager.setCurrentItem(2);
 
         } else if (id == R.id.nav_slideshow) {
+            ViewPager viewPager = (ViewPager) findViewById(R.id.viewpager);
+            viewPager.setCurrentItem(3);
 
         } else if (id == R.id.nav_manage) {
+            startActivity(new Intent(Homeactivity.this,FAQActivity.class));
 
         } else if (id == R.id.nav_share) {
 

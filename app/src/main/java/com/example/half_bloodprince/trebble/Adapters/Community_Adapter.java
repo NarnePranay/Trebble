@@ -16,6 +16,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.example.half_bloodprince.trebble.Activities.SplashScreenActivity;
 import com.example.half_bloodprince.trebble.Homeactivity;
 import com.example.half_bloodprince.trebble.POJO.Post;
 import com.example.half_bloodprince.trebble.POJO.PostBasic;
@@ -67,7 +68,7 @@ public class Community_Adapter extends BaseAdapter {
             public void onClick(View v) {
                 final Intent i = new Intent(mcontext,PostsActivity.class);
                 RequestQueue queue = Volley.newRequestQueue(mcontext);
-                final String url = "https://trebble-b578d.firebaseio.com/posts/"+Homeactivity.postsArr1.get(position)+".json";
+                final String url = "https://trebble-b578d.firebaseio.com/posts/"+ SplashScreenActivity.postsArr1.get(position)+".json";
                 StringRequest stringRequest = new StringRequest(Request.Method.GET, url,
                         new Response.Listener<String>() {
                             @Override
