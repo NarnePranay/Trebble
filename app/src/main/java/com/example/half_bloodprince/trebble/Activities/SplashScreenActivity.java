@@ -1,6 +1,8 @@
 package com.example.half_bloodprince.trebble.Activities;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -45,13 +47,20 @@ public class SplashScreenActivity extends AppCompatActivity implements Animation
 
     Animation animation;
 
-
+    SharedPreferences sharedPreferences;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
+        sharedPreferences= getSharedPreferences("MyPrefs", Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+
+        editor.putString("name", "mom2dylkaychase");
+        editor.putString("id", "3506189");
+        //editor.putInt("post_count", 1);
+        editor.commit();
 
         setContentView(R.layout.activity_splash_screen);
 
