@@ -216,6 +216,7 @@
             android:paddingLeft="10sp"
             android:layout_margin="5dp"
             android:textSize="18sp"
+            android:layout_toLeftOf="@id/send_cmmnt"
             />
         <Button
             android:id="@+id/send_cmmnt"
