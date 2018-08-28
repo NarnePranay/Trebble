@@ -62,8 +62,8 @@ import java.util.List;
 
 public class Homeactivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
-   public static ArrayList <PostBasic >postsArr=new ArrayList<>();
-   public static ArrayList <String >postsArr1=new ArrayList<>();
+ //  public static ArrayList <PostBasic >postsArr=new ArrayList<>();
+  // public static ArrayList <String >postsArr1=new ArrayList<>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -71,7 +71,7 @@ public class Homeactivity extends AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         toolbar.setTitle("Trebble");
         setSupportActionBar(toolbar);
-        getPosts();
+       // getPosts();
 
 
         //fabButton();
@@ -194,8 +194,9 @@ public class Homeactivity extends AppCompatActivity
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
+        if (id == R.id.search) {
+            Intent intent=new Intent(Homeactivity.this, SearchActivity.class);
+            startActivity(intent);
         }
 
         return super.onOptionsItemSelected(item);
@@ -233,52 +234,52 @@ public class Homeactivity extends AppCompatActivity
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
-    public void getPosts()
-    {
-        RequestQueue queue = Volley.newRequestQueue(Homeactivity.this);
-        final String url = "https://trebble-b578d.firebaseio.com/shortPosts.json?orderBy=%22$key%22&limitToFirst=10";
-        StringRequest stringRequest = new StringRequest(Request.Method.GET, url,
-                new Response.Listener<String>() {
-                    @Override
-                    public void onResponse(String response) {
-                        Log.d("response",response);
-                        try {
-                            JSONObject object = new JSONObject(response);
-                            Iterator<String> iterator = object.keys();
-                            int count=0;
-                            while (iterator.hasNext()) {
-                                JSONObject obj = object.getJSONObject(iterator.next());
-                                Gson gson=new Gson();
-                                postsArr.add(gson.fromJson(obj.toString(),PostBasic.class));
-                                Log.d("TAG", obj.toString());
-                                Log.d("lol",postsArr.get(count).getName());
-                                count++;
-                            }
-                            iterator=object.keys();
-                            for(int i=0;i<count;i++)
-                            {
-                                postsArr1.add(iterator.next());
-                                Log.d("hey",postsArr1.get(i));
-                            }
-                        } catch (JSONException e) {
-                            e.printStackTrace();
-                        }
-
-
-                    }
-                }, new Response.ErrorListener() {
-            @Override
-            public void onErrorResponse(VolleyError error) {
-                Log.e("place", "That didn't work!");
-            }
-        });
-
-    queue.add(stringRequest);
-    Log.d("size",postsArr.size()+"");
-// Access the RequestQueue through your singleton class.
-
-
-    }
+//    public void getPosts()
+//    {
+//        RequestQueue queue = Volley.newRequestQueue(Homeactivity.this);
+//        final String url = "https://trebble-b578d.firebaseio.com/shortPosts.json?orderBy=%22$key%22&limitToFirst=10";
+//        StringRequest stringRequest = new StringRequest(Request.Method.GET, url,
+//                new Response.Listener<String>() {
+//                    @Override
+//                    public void onResponse(String response) {
+//                        Log.d("response",response);
+//                        try {
+//                            JSONObject object = new JSONObject(response);
+//                            Iterator<String> iterator = object.keys();
+//                            int count=0;
+//                            while (iterator.hasNext()) {
+//                                JSONObject obj = object.getJSONObject(iterator.next());
+//                                Gson gson=new Gson();
+//                                postsArr.add(gson.fromJson(obj.toString(),PostBasic.class));
+//                                Log.d("TAG", obj.toString());
+//                                Log.d("lol",postsArr.get(count).getName());
+//                                count++;
+//                            }
+//                            iterator=object.keys();
+//                            for(int i=0;i<count;i++)
+//                            {
+//                                postsArr1.add(iterator.next());
+//                                Log.d("hey",postsArr1.get(i));
+//                            }
+//                        } catch (JSONException e) {
+//                            e.printStackTrace();
+//                        }
+//
+//
+//                    }
+//                }, new Response.ErrorListener() {
+//            @Override
+//            public void onErrorResponse(VolleyError error) {
+//                Log.e("place", "That didn't work!");
+//            }
+//        });
+//
+//    queue.add(stringRequest);
+//    Log.d("size",postsArr.size()+"");
+//// Access the RequestQueue through your singleton class.
+//
+//
+//    }
 }
 
 class SampleFragmentPagerAdapter extends FragmentPagerAdapter {

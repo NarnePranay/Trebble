@@ -34,7 +34,7 @@ public class communityFragment extends Fragment {
          View view=inflater.inflate(R.layout.fragment_community, container, false);
         ListView lv=(ListView)view.findViewById(R.id.community_List);
        // ArrayList<PostBasic> fl=new ArrayList<>();
-        Community_Adapter community_adapter=new Community_Adapter(getContext(), SplashScreenActivity.postsArr);
+        Community_Adapter community_adapter=new Community_Adapter(getContext(), SplashScreenActivity.postsArr,SplashScreenActivity.postsArr1);
         lv.setAdapter(community_adapter);
          return view;
     }
