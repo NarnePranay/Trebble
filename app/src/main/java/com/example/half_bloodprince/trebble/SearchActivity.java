@@ -1,6 +1,7 @@
 package com.example.half_bloodprince.trebble;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -10,7 +11,9 @@ import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
 
+import android.widget.Button;
 import android.widget.ListView;
+import android.widget.RelativeLayout;
 import android.widget.SearchView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -26,6 +29,7 @@ import com.android.volley.toolbox.HttpHeaderParser;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.example.half_bloodprince.trebble.Activities.FeedBackActivity;
 import com.example.half_bloodprince.trebble.Adapters.Community_Adapter;
 import com.example.half_bloodprince.trebble.POJO.PostBasic;
 import com.google.gson.Gson;
@@ -56,8 +60,9 @@ public class SearchActivity extends AppCompatActivity {
     ArrayList <String> postIds=new ArrayList<>();
     ArrayList<String> str=new ArrayList<>();
     ProgressDialog dialog;
-    TextView gone;
-
+    TextView oops;
+    int check=0,check1=0;
+    RelativeLayout rela;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -70,7 +75,7 @@ public class SearchActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayShowHomeEnabled(true);
         lv=(ListView)findViewById(R.id.lv);
 
-        gone=(TextView)findViewById(R.id.gone);
+        oops=(TextView)findViewById(R.id.oops);
 
         myToolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
@@ -79,6 +84,18 @@ public class SearchActivity extends AppCompatActivity {
             }
         });
         SearchView searchView=(SearchView)findViewById(R.id.searchView);
+        rela=(RelativeLayout)findViewById(R.id.rela);
+        Button button=(Button)findViewById(R.id.issue);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(SearchActivity.this, FeedBackActivity.class);
+                startActivity(intent);
+                finish();
+
+            }
+        });
+
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
             public boolean onQueryTextSubmit(String query) {
@@ -89,14 +106,12 @@ public class SearchActivity extends AppCompatActivity {
               str1.clear();
               hm.clear();;
               str1.clear();
+              rela.setVisibility(View.GONE);
+              check=0;
+              check1=0;
+              oops.setVisibility(View.GONE);
                // Toast.makeText(SearchActivity.this,query,Toast.LENGTH_SHORT).show();
               getGoogleEntity(query);
-
-             // Log.d("hello",str.size()+"");
-
-
-
-
 
                 return false;
             }
@@ -153,13 +168,20 @@ public class SearchActivity extends AppCompatActivity {
                             e.printStackTrace();
                         }
 
-                        for(int i=0;i<str.size();i++) // getting postsIds
-                        {
-                            getPostIds(i,str.size());
-                            Log.d("hi","hi");
+                        if(str.size()>0) {
+
+                            for (int i = 0; i < str.size(); i++) // getting postsIds
+                            {
+                                getPostIds(i,str.size());
+                                Log.d("hi", "hi");
+                            }
+
                         }
-
-
+                        else
+                        {
+                            rela.setVisibility(View.VISIBLE);
+                            dialog.dismiss();
+                        }
                     }
                 },
                 new Response.ErrorListener()
@@ -216,11 +238,12 @@ public class SearchActivity extends AppCompatActivity {
                     @Override
                     public void onResponse(String response) {
                         Log.d("response ids",response);
-                            gone.setVisibility(View.GONE);
+
                           //  JSONObject jsonObject=new JSONObject(response);
                        //     String str=jsonObject.getString("");
                         char [] q=response.toCharArray();
                         String respo="";
+                        check++;
                         for(int i=1;i<q.length-1;i++)
                         {
                             respo+=q[i];
@@ -241,10 +264,10 @@ public class SearchActivity extends AppCompatActivity {
                                 }
 
                             }
-                    if(s==p+1) {
+                    if(s==check) {
                                 Log.d("pstids",p+"");
                         if (str1.size() == 0) {
-                            gone.setVisibility(View.VISIBLE);
+                            rela.setVisibility(View.VISIBLE);
                             Log.d("size", str1.size() + "");
                             dialog.dismiss();
                         } else {
@@ -280,7 +303,9 @@ public class SearchActivity extends AppCompatActivity {
             @Override
             public void onErrorResponse(VolleyError error) {
                 Log.e("place", "That didn't work! heeeee");
+                oops.setVisibility(View.VISIBLE);
                 dialog.dismiss();
+
             }
         });
 
@@ -300,6 +325,7 @@ public class SearchActivity extends AppCompatActivity {
                     @Override
                     public void onResponse(String response) {
                         Log.d("response",response);
+                        check1++;
                         if(!response.contentEquals("null")) {
                             try {
                                 JSONObject jsonObject = new JSONObject(response);
@@ -309,7 +335,7 @@ public class SearchActivity extends AppCompatActivity {
                                 postIds.add(check);
                                 Log.d("gpb",posts.size()+"");
 
-                                if (s == cs + 1) {
+                                if (s == check1 ) {
                                     community_adapter = new Community_Adapter(SearchActivity.this, posts, postIds);
                                     lv.setAdapter(community_adapter);
                                     dialog.dismiss();
@@ -325,7 +351,7 @@ public class SearchActivity extends AppCompatActivity {
                         else
                         {
                             dialog.dismiss();
-                            gone.setVisibility(View.VISIBLE);
+                            rela.setVisibility(View.VISIBLE);
                         }
 
                     }
@@ -333,7 +359,9 @@ public class SearchActivity extends AppCompatActivity {
             @Override
             public void onErrorResponse(VolleyError error) {
                 Log.e("place", "That didn't work! heu");
+                oops.setVisibility(View.VISIBLE);
                 dialog.dismiss();
+
             }
         });
 
