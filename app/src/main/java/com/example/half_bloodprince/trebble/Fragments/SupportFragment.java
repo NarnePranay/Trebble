@@ -9,9 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
-import com.example.half_bloodprince.trebble.Activities.FeedBackActivity;
 import com.example.half_bloodprince.trebble.FAQActivity;
-import com.example.half_bloodprince.trebble.MapsActivity;
 import com.example.half_bloodprince.trebble.R;
 
 /**
@@ -36,24 +34,7 @@ public class SupportFragment extends Fragment {
                 startActivity(new Intent(getActivity(), FAQActivity.class));
             }
         });
-
-        Button sendFeedback=view.findViewById(R.id.send_feedback);
-        sendFeedback.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(getActivity(), FeedBackActivity.class));
-            }
-        });
-
-        Button b2=(Button)view.findViewById(R.id.serviceCenter);
-        b2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(getActivity(), MapsActivity.class));
-            }
-        });
         return view;
     }
-
 
 }

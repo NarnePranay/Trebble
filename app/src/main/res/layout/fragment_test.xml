@@ -21,6 +21,7 @@
         android:paddingBottom="@dimen/activity_horizontal_margin"
         android:paddingRight="@dimen/activity_horizontal_margin"
         fab:menu_backgroundColor="#ccffffff"
+        fab:menu_fab_label="Choose an action"
         fab:fab_colorNormal="#39f5a4"
         fab:fab_colorPressed="#39f5a4"
         fab:fab_colorRipple="#99FFFFFF"
@@ -37,27 +38,27 @@
         fab:menu_labels_singleLine="true">
 
         <com.github.clans.fab.FloatingActionButton
-            android:id="@+id/schat"
+            android:id="@+id/fab1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/livechat"
-            fab:fab_label="Chat"
+            android:src="@android:drawable/ic_dialog_map"
+            fab:fab_label="Fab 3"
             fab:fab_size="mini" />
 
         <com.github.clans.fab.FloatingActionButton
-            android:id="@+id/scall"
+            android:id="@+id/fab2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/call"
-            fab:fab_label="Call Service Centre"
+            android:src="@android:drawable/ic_dialog_info"
+            fab:fab_label="Fab 2"
             fab:fab_size="mini" />
 
         <com.github.clans.fab.FloatingActionButton
-            android:id="@+id/sfeedback"
+            android:id="@+id/fab3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/feedback"
-            fab:fab_label="Send Feedback"
+            android:src="@android:drawable/ic_dialog_email"
+            fab:fab_label="fab1"
             fab:fab_size="mini" />
 
     </com.github.clans.fab.FloatingActionMenu>

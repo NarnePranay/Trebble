@@ -1,6 +1,5 @@
 package com.example.half_bloodprince.trebble.Fragments;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.util.Log;
@@ -12,7 +11,6 @@ import android.view.animation.AnimationUtils;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.half_bloodprince.trebble.Activities.FeedBackActivity;
 import com.example.half_bloodprince.trebble.R;
 import com.github.clans.fab.FloatingActionButton;
 import com.github.clans.fab.FloatingActionMenu;
@@ -25,9 +23,9 @@ public class PageFragment extends Fragment {
     private Boolean isFabOpen=false;
     private FloatingActionButton fab,fab1,fab2;
     private Animation fab_open,fab_close,rotate_forward,rotate_backward;
-    private FloatingActionButton fabcall;
-    private FloatingActionButton fabchat;
-    private FloatingActionButton fabfeedback;
+    private FloatingActionButton fabAdd;
+    private FloatingActionButton fabDelete;
+    private FloatingActionButton fabEdit;
     private FloatingActionMenu fam;
 
 
@@ -52,9 +50,9 @@ public class PageFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_test, container, false);
 
 
-        fabcall = (FloatingActionButton) view.findViewById(R.id.scall);
-        fabchat = (FloatingActionButton) view.findViewById(R.id.schat);
-        fabfeedback = (FloatingActionButton) view.findViewById(R.id.sfeedback);
+        fabAdd = (FloatingActionButton) view.findViewById(R.id.fab2);
+        fabDelete = (FloatingActionButton) view.findViewById(R.id.fab3);
+        fabEdit = (FloatingActionButton) view.findViewById(R.id.fab1);
         fam = (FloatingActionMenu) view.findViewById(R.id.fab_menu);
 
         //handling menu status (open or close)
@@ -70,9 +68,9 @@ public class PageFragment extends Fragment {
         });
 
         //handling each floating action button clicked
-        fabchat.setOnClickListener(onButtonClick());
-        fabfeedback.setOnClickListener(onButtonClick());
-        fabcall.setOnClickListener(onButtonClick());
+        fabDelete.setOnClickListener(onButtonClick());
+        fabEdit.setOnClickListener(onButtonClick());
+        fabAdd.setOnClickListener(onButtonClick());
 
         fam.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -93,13 +91,12 @@ public class PageFragment extends Fragment {
         return new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (view == fabcall) {
-                    showToast("Button call clicked");
-                } else if (view == fabchat) {
-                    showToast("Button chat clicked");
+                if (view == fabAdd) {
+                    showToast("Button Add clicked");
+                } else if (view == fabDelete) {
+                    showToast("Button Delete clicked");
                 } else {
-                    startActivity(new Intent(getContext(), FeedBackActivity.class));
-
+                    showToast("Button Edit clicked");
                 }
                 fam.close(true);
             }
