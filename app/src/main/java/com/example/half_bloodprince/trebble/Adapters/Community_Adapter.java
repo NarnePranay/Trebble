@@ -89,7 +89,7 @@ public class Community_Adapter extends BaseAdapter {
 //                                        Log.d("lol",postsArr.get(count).getName());
 //                                        count++;
                                     //}
-                                    Log.d("heyeye",post.getReplies()[1].getComment());
+//                                    Log.d("heyeye",post.getReplies()[1].getComment());
                                     Bundle bundle=new Bundle();
                                     bundle.putSerializable("post",post);
                                     i.putExtras(bundle);

@@ -52,22 +52,16 @@
                 <action android:name="android.intent.action.MAIN" />
             </intent-filter>
 
-<<<<<<< HEAD
 
         </activity>
+
+
         <activity android:name=".Activities.FeedBackActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar">
 
         </activity>
-=======
->>>>>>> 8ae6342369ce058ec55ca3bfac08b1f35c505159
-        </activity>
-        <activity android:name=".DetailsActivity" />
-        <activity
-            android:name=".PostsActivity"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".FAQActivity" />
-        <activity android:name=".FAQAnsActivity" />
+
+
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
              (See the file "res/values/google_maps_api.xml").
