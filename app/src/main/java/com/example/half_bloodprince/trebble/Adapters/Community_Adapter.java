@@ -51,6 +51,7 @@ public class Community_Adapter extends BaseAdapter {
     DatabaseReference myRef;
     int flag=0;
     String postName;
+    int check=0,check1=0;
     public Community_Adapter(Context mContext, ArrayList<PostBasic> mArrayList,ArrayList<String>mStrings)
     {
         this.mcontext=mContext;
@@ -82,7 +83,8 @@ public class Community_Adapter extends BaseAdapter {
             @Override
             public void onClick(View v) {
                 dialog= ProgressDialog.show(mcontext, "", "Loading. Please wait...", true);
-
+                check=0;
+                check1=0;
                  i = new Intent(mcontext,PostsActivity.class);
                 RequestQueue queue = Volley.newRequestQueue(mcontext);
                 postName=mStrings.get(position);
@@ -157,11 +159,12 @@ void getFrequency(int position, int cs,String str) {
             new Response.Listener<String>() {
                 @Override
                 public void onResponse(String response) {
+                    check++;
                     int x=Integer.parseInt(response);
                     Log.d("response", response);
                     myRef = database.getReference("tags").child(s).child("search_count");
                     myRef.setValue(x+1);
-                    if(pos==css+1 && flag==1) {
+                    if(pos==check) {
                         Bundle bundle = new Bundle();
                         bundle.putSerializable("post", post);
                         bundle.putString("postName",postName);
@@ -172,7 +175,7 @@ void getFrequency(int position, int cs,String str) {
                     }
                     else
                     {
-                        Log.e("getFreq",pos+"  "+css+"    "+flag);
+                        Log.e("getFreq",pos+"  "+check1+"    "+flag);
                     }
 
 
@@ -203,6 +206,7 @@ void getFrequency(int position, int cs,String str) {
                     @Override
                     public void onResponse(String response) {
                         Log.d("response", response+"jk;nkl");
+                        check1++;
                         if(response.contentEquals("null"))
                         {
                             TagsUser tagsUser=null;
@@ -233,8 +237,14 @@ void getFrequency(int position, int cs,String str) {
                             // Log.d("time",sdf.format(calendar.getTime()));
 
                             myRef.setValue(sdf.format(calendar.getTime()));
-                            if (pos == css + 1) {
+                            if (pos == check1) {
                                 flag = 1;
+                                Log.d("response", check1+" "+pos);
+                            }
+                            else {
+                                //Log.d("lolo")
+                                Log.d("response", check1+" "+pos);
+
                             }
                         }
                     }

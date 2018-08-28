@@ -24,15 +24,67 @@
             />
 
     </android.support.v7.widget.Toolbar>
+
+    <RelativeLayout
+        android:id="@+id/rela"
+        android:layout_width="match_parent"
+        android:background="#ffffff"
+        android:visibility="gone"
+        android:layout_height="match_parent">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@id/tv1">
+        <ImageView
+            android:id="@+id/img_nores"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/noresult"
+            android:layout_centerInParent="true"
+            />
+        <TextView
+            android:id="@+id/gone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_below="@+id/img_nores"
+            android:layout_centerHorizontal="true"
+            android:text="Sorry No Posts Found..."
+            />
+        </RelativeLayout>
+        <TextView
+            android:id="@+id/tv1"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_alignParentBottom="true"
+            android:gravity="center_vertical"
+            android:paddingLeft="20dp"
+            android:textSize="17sp"
+            android:background="#eef5f2"
+            android:text="Facing Issue..We are here to help!!! "/>
+        <Button
+            android:id="@+id/issue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:background="@null"
+            android:textAllCaps="false"
+            android:layout_marginBottom="5dp"
+            android:layout_alignParentRight="true"
+            android:text="Add Issue"
+            />
+    </RelativeLayout>
     <TextView
-        android:id="@+id/gone"
+        android:id="@+id/oops"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:visibility="gone"
-         android:gravity="center"
+        android:gravity="center"
         android:textSize="20sp"
-        android:text="Sorry No tags Found.."
-
+        android:text="Something Went Wrong Please Check Internet Connetion.."
+        android:padding="10dp"
         />
     <ListView
         android:id="@+id/lv"
