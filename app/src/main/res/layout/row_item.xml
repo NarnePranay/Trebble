@@ -17,6 +17,6 @@
         android:textSize="12sp"
         android:textAllCaps="false"
         android:fontFamily="@font/ralewaysemibold"
-        android:background="@drawable/roundedbtn" />
+        android:background="@drawable/back_button" />
 
 </LinearLayout>

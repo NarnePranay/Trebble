@@ -1,23 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<selector xmlns:android="http://schemas.android.com/apk/res/android">
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
 
+    <corners
+        android:radius="60dp" />
 
-    <item
-        android:drawable="@drawable/button_focused"
-        android:state_enabled="false" />
+    <solid
+        android:color="@android:color/transparent" />
 
-    <item
-        android:state_pressed="true"
-        android:state_enabled="true"
-        android:drawable="@drawable/button_pressed" />
+    <stroke
+        android:color="#49ace1"
+        android:width="0.1dp" />
 
-    <item
-        android:state_focused="true"
-        android:state_enabled="true"
-        android:drawable="@drawable/button_focused" />
+</shape>
 
-    <item
-        android:state_enabled="true"
-        android:drawable="@drawable/button_focused" />
-
-</selector>
+    <!--9b8f8f-->
