@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 
 import com.example.half_bloodprince.trebble.FAQActivity;
+import com.example.half_bloodprince.trebble.MapsActivity;
 import com.example.half_bloodprince.trebble.R;
 
 /**
@@ -32,6 +33,13 @@ public class SupportFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(getActivity(), FAQActivity.class));
+            }
+        });
+        Button b2=(Button)view.findViewById(R.id.serviceCenter);
+        b2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getActivity(), MapsActivity.class));
             }
         });
         return view;
