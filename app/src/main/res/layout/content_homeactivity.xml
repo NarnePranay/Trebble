@@ -22,7 +22,7 @@
             android:layout_height="wrap_content"
             app:tabMaxWidth="0dp"
             app:tabGravity="fill"
-            app:tabMode="scrollable"
+            app:tabMode="fixed"
             android:background="#FFFFFF"
             app:tabSelectedTextColor="@android:color/holo_blue_light"
             app:tabIndicatorColor="@android:color/holo_blue_bright"

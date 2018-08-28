@@ -5,6 +5,7 @@ import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.view.animation.Animation;
@@ -36,7 +37,7 @@ import pl.droidsonroids.gif.GifDrawable;
 
 public class SplashScreenActivity extends AppCompatActivity implements Animation.AnimationListener {
 
-    private static final long SPLASH_SCREEN_TIMEOUT = 3000;
+    private static final long SPLASH_SCREEN_TIMEOUT = 800;
     private boolean can_be_finished=false;
 
     public static ArrayList<PostBasic > postsArr=new ArrayList<>();
@@ -53,6 +54,15 @@ public class SplashScreenActivity extends AppCompatActivity implements Animation
 
 
         setContentView(R.layout.activity_splash_screen);
+
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+               ImageView imageView=findViewById(R.id.loading);
+               imageView.setVisibility(View.VISIBLE);
+            }
+        },SPLASH_SCREEN_TIMEOUT);
+
 /*
         ImageView imageView=findViewById(R.id.img_dell);
         animation= AnimationUtils.loadAnimation(getApplicationContext(),R.anim.zoomin);

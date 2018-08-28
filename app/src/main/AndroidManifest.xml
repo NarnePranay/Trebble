@@ -16,9 +16,9 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/delllogo"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@drawable/delllogo"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".MainActivity" />
@@ -26,7 +26,10 @@
             android:name=".Homeactivity"
             android:label="@string/title_activity_homeactivity"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".DetailsActivity" />
+        <activity android:name=".DetailsActivity"
+            android:theme="@style/Theme.AppCompat.Light"
+            android:label="News"
+            android:parentActivityName=".MainActivity"/>
         <activity
             android:name=".PostsActivity"
             android:theme="@style/AppTheme.NoActionBar" />

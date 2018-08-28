@@ -29,6 +29,7 @@
         android:layout_below="@+id/my_toolbar">
 
   <RelativeLayout
+      android:layout_marginTop="5dp"
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
       android:orientation="vertical">
@@ -45,7 +46,8 @@
 
           android:layout_width="match_parent"
           android:layout_height="wrap_content"
-          android:orientation="vertical">
+          android:orientation="vertical"
+          android:layout_margin="5dp">
 
           <TextView
               android:id="@+id/ques_post"
@@ -120,8 +122,9 @@
               android:id="@+id/ques_post_des"
               android:layout_width="match_parent"
               android:layout_height="wrap_content"
-              android:layout_margin="15dp"
+              android:layout_margin="10dp"
               android:layout_below="@+id/v1"
+              android:textAlignment="inherit"
               android:text="It means there is a compilation error in your XML file, something that shouldn't be there: a spelling mistake/a spurious character/an incorrect namespace."
               />
           <View
