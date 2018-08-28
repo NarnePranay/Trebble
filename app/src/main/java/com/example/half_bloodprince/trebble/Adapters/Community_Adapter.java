@@ -20,6 +20,7 @@ import com.android.volley.toolbox.Volley;
 import com.example.half_bloodprince.trebble.Homeactivity;
 import com.example.half_bloodprince.trebble.POJO.Post;
 import com.example.half_bloodprince.trebble.POJO.PostBasic;
+import com.example.half_bloodprince.trebble.POJO.TagsUser;
 import com.example.half_bloodprince.trebble.PostsActivity;
 import com.example.half_bloodprince.trebble.R;
 import com.google.firebase.database.DatabaseReference;
@@ -204,21 +205,22 @@ void getFrequency(int position, int cs,String str) {
                         Log.d("response", response+"jk;nkl");
                         if(response.contentEquals("null"))
                         {
+                            TagsUser tagsUser=null;
                             myRef = database.getReference("users").child("3506189").child("tags").child(s);
                             JSONObject jsonObject=new JSONObject();
                             try {
                                 jsonObject.put("frequency",1);
                                 Calendar calendar = Calendar.getInstance();
                                 SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
-                                jsonObject.put("post_date",sdf.format(calendar.getTime()));
-                                jsonObject.put("search_date","\"\"");
-                                jsonObject.put("sentiment",-2);
-
+//                                jsonObject.put("post_date",sdf.format(calendar.getTime()));
+//                                jsonObject.put("search_date","\"\"");
+//                                jsonObject.put("sentiment",-2);
+                                tagsUser=new TagsUser(1,sdf.format(calendar.getTime()),"\"\"",-2);
                             }
                             catch (JSONException e) {
                                 e.printStackTrace();
                             }
-                            myRef.setValue(jsonObject);
+                            myRef.setValue(tagsUser);
                         }
                         else {
                             char[] z = response.toCharArray();
