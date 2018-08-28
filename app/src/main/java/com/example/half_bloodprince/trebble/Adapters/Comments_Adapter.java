@@ -1,7 +1,6 @@
 package com.example.half_bloodprince.trebble.Adapters;
 
 import android.content.Context;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -49,7 +48,6 @@ public class Comments_Adapter extends BaseAdapter {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         View view= LayoutInflater.from(mContext).inflate(R.layout.comment_layout, null);
-        Log.d("position",position+"");
         TextView comment=(TextView)view.findViewById(R.id.Comment);
         comment.setText(mComments[position+1].getComment()+"");
         TextView name=(TextView)view.findViewById(R.id.UserName_Cmnt);

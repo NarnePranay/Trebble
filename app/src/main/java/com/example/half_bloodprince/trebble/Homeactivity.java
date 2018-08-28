@@ -25,7 +25,6 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.ViewGroup;
-import android.widget.SearchView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -96,7 +95,11 @@ public class Homeactivity extends AppCompatActivity
 
         // Give the TabLayout the ViewPager
         TabLayout tabLayout = (TabLayout) findViewById(R.id.sliding_tabs);
+
         tabLayout.setupWithViewPager(viewPager);
+
+
+
     }
 
 /*
@@ -191,9 +194,8 @@ public class Homeactivity extends AppCompatActivity
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.search) {
-            Intent intent=new Intent(Homeactivity.this, SearchActivity.class);
-            startActivity(intent);
+        if (id == R.id.action_settings) {
+            return true;
         }
 
         return super.onOptionsItemSelected(item);
@@ -207,11 +209,19 @@ public class Homeactivity extends AppCompatActivity
 
         if (id == R.id.nav_camera) {
             // Handle the camera action
+            Log.d("TAG", "onNavigationItemSelected: camera");
+            ViewPager viewPager = (ViewPager) findViewById(R.id.viewpager);
+            viewPager.setCurrentItem(1);
         } else if (id == R.id.nav_gallery) {
+            ViewPager viewPager = (ViewPager) findViewById(R.id.viewpager);
+            viewPager.setCurrentItem(2);
 
         } else if (id == R.id.nav_slideshow) {
+            ViewPager viewPager = (ViewPager) findViewById(R.id.viewpager);
+            viewPager.setCurrentItem(3);
 
         } else if (id == R.id.nav_manage) {
+            startActivity(new Intent(Homeactivity.this,FAQActivity.class));
 
         } else if (id == R.id.nav_share) {
 

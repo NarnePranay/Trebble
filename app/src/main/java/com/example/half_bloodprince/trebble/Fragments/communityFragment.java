@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
 
+import com.example.half_bloodprince.trebble.Activities.SplashScreenActivity;
 import com.example.half_bloodprince.trebble.Adapters.Community_Adapter;
 import com.example.half_bloodprince.trebble.Homeactivity;
 import com.example.half_bloodprince.trebble.POJO.PostBasic;
@@ -33,7 +34,7 @@ public class communityFragment extends Fragment {
          View view=inflater.inflate(R.layout.fragment_community, container, false);
         ListView lv=(ListView)view.findViewById(R.id.community_List);
        // ArrayList<PostBasic> fl=new ArrayList<>();
-        Community_Adapter community_adapter=new Community_Adapter(getContext(), Homeactivity.postsArr,Homeactivity.postsArr1);
+        Community_Adapter community_adapter=new Community_Adapter(getContext(), SplashScreenActivity.postsArr);
         lv.setAdapter(community_adapter);
          return view;
     }

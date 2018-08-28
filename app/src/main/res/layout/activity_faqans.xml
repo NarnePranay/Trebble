@@ -3,10 +3,22 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_margin="10dp"
     android:layout_height="match_parent"
-    tools:context=".FAQAnsActivity">
+    tools:context=".FAQAnsActivity"
+    android:background="#FFFF">
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/my_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="#FFFF"
+        android:elevation="0dp"
+        app:title="FAQ's"
+        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+        />
     <LinearLayout
+        android:layout_margin="10dp"
+        android:layout_below="@id/my_toolbar"
         android:id="@+id/ll"
         android:background="@drawable/bg_card"
         android:orientation="vertical"
@@ -16,19 +28,21 @@
             android:paddingLeft="5dp"
             android:id="@+id/title"
             android:text="Question:"
-            android:textAllCaps="true"
+            android:textAllCaps="false"
             android:layout_marginBottom="18sp"
-            android:textSize="15sp"
-            android:textColor="#020202"
+            android:textSize="18sp"
+            android:textColor="#050505"
+            android:fontFamily="@font/ralewaysemibold"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
         <TextView
             android:id="@+id/txt"
             android:paddingLeft="5dp"
-            android:textColor="#FFFFFF"
+            android:textColor="#121212"
+            android:fontFamily="@font/ralewaylight"
             android:layout_below="@+id/title"
-            android:textAllCaps="true"
-            android:textSize="17sp"
+            android:textAllCaps="false"
+            android:textSize="15sp"
             android:text="this can be a possible Question"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
@@ -44,18 +58,20 @@
         android:layout_height="12sp" />
 
     <LinearLayout
+        android:layout_margin="10dp"
         android:orientation="vertical"
         android:layout_below="@+id/space"
         android:background="@drawable/bg_card"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <TextView
+            android:fontFamily="@font/ralewaysemibold"
             android:id="@+id/title2"
             android:text="Answer:"
             android:paddingLeft="5dp"
-            android:textAllCaps="true"
+            android:textAllCaps="false"
             android:layout_marginBottom="16sp"
-            android:textSize="15sp"
+            android:textSize="18sp"
             android:textColor="#020202"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
@@ -65,8 +81,9 @@
             android:textSize="15sp"
             android:paddingLeft="5dp"
             android:id="@+id/txt2"
-            android:textColor="#FFFFFF"
-            android:textAllCaps="true"
+            android:fontFamily="@font/ralewaylight"
+            android:textColor="#1e1e1e"
+            android:textAllCaps="false"
             android:text="this can be a possible answer"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
