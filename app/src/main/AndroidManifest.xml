@@ -3,6 +3,16 @@
     package="com.example.half_bloodprince.trebble">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+
+    <!--
+         The ACCESS_COARSE/FINE_LOCATION permissions are not required to use
+         Google Maps Android API v2, but you must specify either coarse or fine
+         location permissions for the 'MyLocation' functionality.
+    -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 
     <application
         android:allowBackup="true"
@@ -15,19 +25,70 @@
         <activity
             android:name=".Homeactivity"
             android:label="@string/title_activity_homeactivity"
-            android:theme="@style/AppTheme.NoActionBar">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".DetailsActivity" />
+        <activity
+            android:name=".PostsActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".FAQActivity"
+            android:label="FAQ&apos;s"
+            android:parentActivityName=".Homeactivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity
+            android:name=".FAQAnsActivity"
+            android:label="Answer"
+            android:parentActivityName=".FAQActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity
+            android:name=".Activities.SplashScreenActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
 
+
+            <intent-filter>
                 <category android:name="android.intent.category.LAUNCHER" />
+
+                <action android:name="android.intent.action.MAIN" />
             </intent-filter>
+
+<<<<<<< HEAD
+
+        </activity>
+        <activity android:name=".Activities.FeedBackActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+
+        </activity>
+=======
+>>>>>>> 8ae6342369ce058ec55ca3bfac08b1f35c505159
         </activity>
         <activity android:name=".DetailsActivity" />
         <activity
             android:name=".PostsActivity"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
-        <activity android:name=".FAQActivity"></activity>
-        <activity android:name=".FAQAnsActivity"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".FAQActivity" />
+        <activity android:name=".FAQAnsActivity" />
+        <!--
+             The API key for Google Maps-based APIs is defined as a string resource.
+             (See the file "res/values/google_maps_api.xml").
+             Note that the API key is linked to the encryption key used to sign the APK.
+             You need a different API key for each encryption key, including the release key that is used to
+             sign the APK for publishing.
+<<<<<<< HEAD
+             You can define the keys for the debug and release targets in src/debug/ and src/release/.
+=======
+             You can define the keys for the debug and release targets in src/debug/ and src/release/.
+>>>>>>> 8ae6342369ce058ec55ca3bfac08b1f35c505159
+        -->
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="@string/google_maps_key" />
+
+        <activity
+            android:name=".MapsActivity"
+            android:label="@string/title_activity_maps">
+
+        </activity>
     </application>
 
 </manifest>
