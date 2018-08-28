@@ -12,6 +12,7 @@ import android.view.animation.AnimationUtils;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.half_bloodprince.trebble.Activities.CallActivity;
 import com.example.half_bloodprince.trebble.Activities.FeedBackActivity;
 import com.example.half_bloodprince.trebble.R;
 import com.github.clans.fab.FloatingActionButton;
@@ -94,7 +95,8 @@ public class PageFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 if (view == fabcall) {
-                    showToast("Button call clicked");
+                    startActivity(new Intent(getActivity(), CallActivity.class));
+
                 } else if (view == fabchat) {
                     showToast("Button chat clicked");
                 } else {

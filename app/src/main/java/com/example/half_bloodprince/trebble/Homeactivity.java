@@ -35,6 +35,7 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.example.half_bloodprince.trebble.Activities.CallActivity;
 import com.example.half_bloodprince.trebble.Fragments.MainFragment;
 import com.example.half_bloodprince.trebble.Fragments.PageFragment;
 import com.example.half_bloodprince.trebble.Fragments.SupportFragment;
@@ -224,9 +225,10 @@ public class Homeactivity extends AppCompatActivity
         } else if (id == R.id.nav_manage) {
             startActivity(new Intent(Homeactivity.this,FAQActivity.class));
 
-        } else if (id == R.id.nav_share) {
+        } else if (id == R.id.nav_call) {
+            startActivity(new Intent(Homeactivity.this, CallActivity.class));
 
-        } else if (id == R.id.nav_send) {
+        } else if (id == R.id.nav_chat) {
 
         }
 

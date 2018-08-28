@@ -41,7 +41,7 @@ import java.util.Random;
 
 public class FeedBackActivity extends AppCompatActivity {
     TextInputEditText que,title;
-    SharedPreferences sharedPreferences
+    SharedPreferences sharedPreferences;
     Post post;
     ArrayList<TagsUser>tag=new ArrayList<>();
     ArrayList<String> str=new ArrayList<>();
@@ -153,7 +153,7 @@ public class FeedBackActivity extends AppCompatActivity {
                         post.setReply_count(0);
                         post.setTags(strq);
                         Random rand=new Random();
-                        post.setViews();
+                        post.setViews(0);
 
 
                     }
