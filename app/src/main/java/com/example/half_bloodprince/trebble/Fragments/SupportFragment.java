@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
+import com.example.half_bloodprince.trebble.Activities.CallActivity;
 import com.example.half_bloodprince.trebble.Activities.FeedBackActivity;
 import com.example.half_bloodprince.trebble.FAQActivity;
 import com.example.half_bloodprince.trebble.MapsActivity;
@@ -52,6 +53,15 @@ public class SupportFragment extends Fragment {
                 startActivity(new Intent(getActivity(), MapsActivity.class));
             }
         });
+
+        Button call=view.findViewById(R.id.call);
+        call.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getActivity(), CallActivity.class));
+            }
+        });
+
         return view;
     }
 
