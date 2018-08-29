@@ -54,7 +54,7 @@ public class SplashScreenActivity extends AppCompatActivity implements Animation
     public ArrayList <sentiment> arrylist=new ArrayList<>();
     HashMap <String,TagsUser> hm=new HashMap<>();
     public static ArrayList<Post> UserPost=new ArrayList<>();
-
+    public static ArrayList<String> UserPost_name=new ArrayList<>();
     Animation animation;
 
     SharedPreferences sharedPreferences;
@@ -256,6 +256,7 @@ public class SplashScreenActivity extends AppCompatActivity implements Animation
                             Gson gson=new Gson();
                             Post post=gson.fromJson(object.toString(),Post.class);
                             UserPost.add(post);
+                            UserPost_name.add(st);
 
                         } catch (JSONException e) {
                             e.printStackTrace();

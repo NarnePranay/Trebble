@@ -507,6 +507,7 @@ return present_senti;
                             e.printStackTrace();
                         }
                         SplashScreenActivity.UserPost.add(post1);
+                        SplashScreenActivity.UserPost_name.add((post_number+1000)+"");
                         Toast.makeText(FeedBackActivity.this,"Successfully posted",Toast.LENGTH_SHORT).show();
                         finish();
 

@@ -22,6 +22,7 @@ import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.half_bloodprince.trebble.Activities.CallActivity;
 import com.example.half_bloodprince.trebble.Activities.FeedBackActivity;
+import com.example.half_bloodprince.trebble.Activities.FeedbackListActivity;
 import com.example.half_bloodprince.trebble.Activities.SplashScreenActivity;
 import com.example.half_bloodprince.trebble.FAQActivity;
 import com.example.half_bloodprince.trebble.Homeactivity;
@@ -55,6 +56,13 @@ public class SupportFragment extends Fragment {
         Uid=sharedPreferences.getString("id","Akhil");
         Log.d("Nmae/Support",Uid);
 
+        Button button=(Button)view.findViewById(R.id.feedback_list);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getActivity(), FeedbackListActivity.class));
+            }
+        });
         b1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
