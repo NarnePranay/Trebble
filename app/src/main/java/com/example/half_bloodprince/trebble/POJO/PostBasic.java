@@ -15,6 +15,8 @@ public class PostBasic {
      String rank;
      int reply_count;
 
+     public PostBasic()
+     {}
     public PostBasic( String heading,String name, String date, int views,String time,String rank, int reply_count)
     {
         this.date=date;

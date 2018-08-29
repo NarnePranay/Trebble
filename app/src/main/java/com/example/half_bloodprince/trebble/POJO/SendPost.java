@@ -1,12 +1,12 @@
 package com.example.half_bloodprince.trebble.POJO;
 
-import java.io.Serializable;
+import java.util.ArrayList;
 
 /**
- * Created by j.girish on 27-08-2018.
+ * Created by j.girish on 29-08-2018.
  */
 
-public class Post implements Serializable{
+public class SendPost {
     String body;
     String date;
     String heading;
@@ -16,14 +16,13 @@ public class Post implements Serializable{
     int reply_count;
     String tags;
     int views;
-    Comment [] replies;
+    ArrayList<Comment> replies;
 
-    public Post()
+    public SendPost()
     {
 
     }
-
-    public Post(String body, String date, String heading, String name, String rank, String time, int reply_count, String tags, int views, Comment[] replies) {
+    public SendPost(String body, String date, String heading, String name, String rank, String time, int reply_count, String tags, int views, ArrayList<Comment> replies) {
         this.body = body;
         this.date = date;
         this.heading = heading;
@@ -108,11 +107,11 @@ public class Post implements Serializable{
         this.views = views;
     }
 
-    public Comment[] getReplies() {
+    public ArrayList<Comment> getReplies() {
         return replies;
     }
 
-    public void setReplies(Comment[] replies) {
+    public void setReplies(ArrayList<Comment> replies) {
         this.replies = replies;
     }
 }

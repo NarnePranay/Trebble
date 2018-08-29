@@ -10,12 +10,14 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ListView;
-import android.widget.ProgressBar;
 import android.widget.Toast;
 
-import com.example.half_bloodprince.trebble.DetailsActivity;
+import com.example.half_bloodprince.trebble.Activities.SplashScreenActivity;
+import com.example.half_bloodprince.trebble.Adapters.Community_Adapter;
 import com.example.half_bloodprince.trebble.Adapters.ListNewsAdapter;
+import com.example.half_bloodprince.trebble.DetailsActivity;
 import com.example.half_bloodprince.trebble.NewsUtility;
+import com.example.half_bloodprince.trebble.POJO.PostBasic;
 import com.example.half_bloodprince.trebble.R;
 
 import org.json.JSONArray;
@@ -25,43 +27,50 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+import static com.example.half_bloodprince.trebble.Fragments.MainFragment.KEY_AUTHOR;
+import static com.example.half_bloodprince.trebble.Fragments.MainFragment.KEY_DESCRIPTION;
+import static com.example.half_bloodprince.trebble.Fragments.MainFragment.KEY_PUBLISHEDAT;
+import static com.example.half_bloodprince.trebble.Fragments.MainFragment.KEY_TITLE;
+import static com.example.half_bloodprince.trebble.Fragments.MainFragment.KEY_URL;
+import static com.example.half_bloodprince.trebble.Fragments.MainFragment.KEY_URLTOIMAGE;
 
-public class MainFragment extends Fragment {
+/**
+ * A simple {@link Fragment} subclass.
+ */
+public class HomeFragment extends Fragment {
 
-    String API_KEY = "421b77bcbf5e4f3e859e974dbc7cfccf";
-    String NEWS_SOURCE = "techradar";
-    ListView listNews;
-    ProgressBar loader;
 
+    public HomeFragment() {
+        // Required empty public constructor
+    }
     ArrayList<HashMap<String, String>> dataList = new ArrayList<HashMap<String, String>>();
-    public static final String KEY_AUTHOR = "author";
-    public static final String KEY_TITLE = "title";
-    public static final String KEY_DESCRIPTION = "description";
-    public static final String KEY_URL = "url";
-    public static final String KEY_URLTOIMAGE = "urlToImage";
-    public static final String KEY_PUBLISHEDAT = "publishedAt";
+    ListView listNews,listPosts;
 
-
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,Bundle savedInstanceState) {
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        dataList.clear();
-        View view=inflater.inflate(R.layout.fragment_news,container,false);
-        listNews = (ListView) view.findViewById(R.id.listNews);
-        loader = (ProgressBar) view.findViewById(R.id.loader);
-        listNews.setEmptyView(loader);
-
+        View view =inflater.inflate(R.layout.fragment_home,container,false);
+        listNews=(ListView)view.findViewById(R.id.listNews);
+        listPosts=(ListView)view.findViewById(R.id.listPosts);
         if(NewsUtility.isNetworkAvailable(getActivity()))
         {
-            DownloadNews newsTask = new DownloadNews();
+           DownloadNews newsTask = new DownloadNews();
             newsTask.execute();
         }
         else{
             Toast.makeText(getActivity(), "No Internet Connection", Toast.LENGTH_LONG).show();
         }
+        ArrayList<PostBasic> postBasics=new ArrayList<PostBasic>();
+        ArrayList<String> strings=new ArrayList<>();
+        for(int i=0;i<2;i++){
+            postBasics.add(SplashScreenActivity.postsArr.get(i));
+            strings.add(SplashScreenActivity.postsArr1.get(i));
+        }
 
+        Community_Adapter community_adapter=new Community_Adapter(getContext(),postBasics,strings);
+        listPosts.setAdapter(community_adapter);
         return view;
     }
-
     public class DownloadNews extends AsyncTask<String, Void, String> {
         @Override
         protected void onPreExecute() {
@@ -83,7 +92,7 @@ public class MainFragment extends Fragment {
                     JSONObject jsonResponse = new JSONObject(xml);
                     JSONArray jsonArray = jsonResponse.optJSONArray("articles");
 
-                    for (int i = 0; i < jsonArray.length(); i++) {
+                    for (int i = 0; i <2; i++) {
                         JSONObject jsonObject = jsonArray.getJSONObject(i);
                         HashMap<String, String> map = new HashMap<String, String>();
                         map.put(KEY_AUTHOR, jsonObject.optString(KEY_AUTHOR).toString());
@@ -119,7 +128,4 @@ public class MainFragment extends Fragment {
 
     }
 
-
-
 }
-
