@@ -111,7 +111,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         }
 
         mMap.clear();
-        String url = getUrl(latitude, longitude, "Dell");
+        String url = getUrl(latitude, longitude, "establishment");
         Object[] DataTransfer = new Object[2];
         DataTransfer[0] = mMap;
         DataTransfer[1] = url;
@@ -149,9 +149,10 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     private String getUrl(double latitude, double longitude, String nearbyPlace) {
 
         StringBuilder googlePlacesUrl = new StringBuilder("https://maps.googleapis.com/maps/api/place/nearbysearch/json?");
-        googlePlacesUrl.append("location=" + latitude + "," + longitude);
+        googlePlacesUrl.append("location=" + 32.392391 + "," + 75.510246);
         googlePlacesUrl.append("&radius=" + PROXIMITY_RADIUS);
-        googlePlacesUrl.append("&name=" + nearbyPlace);
+        googlePlacesUrl.append("&type=" + nearbyPlace);
+        googlePlacesUrl.append("&input=" + "Dell");
         googlePlacesUrl.append("&key="+"AIzaSyBlCQBl4oXUBcDqk3rLv3U7joenWXY0-to");
         googlePlacesUrl.append("&sensor=true");
         Log.d("getUrl", googlePlacesUrl.toString());
