@@ -244,7 +244,7 @@ public class SearchActivity extends AppCompatActivity {
                         char [] q=response.toCharArray();
                         String respo="";
                         check++;
-                        for(int i=1;i<q.length-1;i++)
+                        for(int i=1;i<q.length-2;i++)
                         {
                             respo+=q[i];
                         }

@@ -215,11 +215,11 @@ void getFrequency(int position, int cs,String str) {
                             try {
                                 jsonObject.put("frequency",1);
                                 Calendar calendar = Calendar.getInstance();
-                                SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
+                                SimpleDateFormat sdf = new SimpleDateFormat("MM-dd-yyyy");
 //                                jsonObject.put("post_date",sdf.format(calendar.getTime()));
 //                                jsonObject.put("search_date","\"\"");
 //                                jsonObject.put("sentiment",-2);
-                                tagsUser=new TagsUser(1,sdf.format(calendar.getTime()),"\"\"",-2);
+                                tagsUser=new TagsUser(1,"",sdf.format(calendar.getTime()),0);
                             }
                             catch (JSONException e) {
                                 e.printStackTrace();

@@ -307,6 +307,7 @@ class SampleFragmentPagerAdapter extends FragmentPagerAdapter {
         switch (position){
             case 0: return PageFragment.newInstance(position + 1);
             case 1: return new SupportFragment();
+               //return PageFragment.newInstance(position + 1);
 
             case 2:
                 //communityFragment cf=new communityFragment();
