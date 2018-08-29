@@ -24,8 +24,6 @@ public class NewsUtility {
             //connection.setRequestMethod("POST");
             //connection.setRequestProperty("Content-Type", "application/x-www-form-urlencoded");
             connection.setRequestProperty("content-type", "application/json;  charset=utf-8");
-
-
             connection.setRequestProperty("Content-Language", "en-US");
 
             connection.setUseCaches (false);

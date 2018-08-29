@@ -70,7 +70,6 @@ public class MainFragment extends Fragment {
         }
         protected String doInBackground(String... args) {
             String xml = "";
-
             String urlParameters = "";
             xml = NewsUtility.excuteGet("https://newsapi.org/v2/top-headlines?sources=techradar&apiKey=421b77bcbf5e4f3e859e974dbc7cfccf", urlParameters);
             return  xml;
@@ -105,7 +104,7 @@ public class MainFragment extends Fragment {
                 listNews.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                         Intent i = new Intent(getActivity(), DetailsActivity.class);
-                        i.putExtra("url", dataList.get(+position).get(KEY_URL));
+                        i.putExtra("url", dataList.get(position).get(KEY_URL));
                         startActivity(i);
                     }
                 });
