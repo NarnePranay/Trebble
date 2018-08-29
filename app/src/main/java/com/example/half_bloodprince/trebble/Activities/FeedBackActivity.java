@@ -50,12 +50,13 @@ public class FeedBackActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_feed_back);
         sharedPreferences= getSharedPreferences("MyPrefs", Context.MODE_PRIVATE);
-        android.support.v7.widget.Toolbar myToolbar = (android.support.v7.widget.Toolbar) findViewById(R.id.my_toolbar);
-        setSupportActionBar(myToolbar);
+
         que=(TextInputEditText)findViewById(R.id.question1);
 
         title=(TextInputEditText)findViewById(R.id.title);
 
+        android.support.v7.widget.Toolbar myToolbar = (android.support.v7.widget.Toolbar) findViewById(R.id.my_toolbar);
+        setSupportActionBar(myToolbar);
         //myToolbar.setTitle("COMMUNITY");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
@@ -69,11 +70,7 @@ public class FeedBackActivity extends AppCompatActivity {
                    // str=str.toLowerCase();
                     str="Laptop Inspiron 15 7000 Series Model 7579 wont start or boot";
                     getGoogleEntitySenti(str);
-
-
-
-
-                }
+               }
                 else
                     {
                         Toast.makeText(FeedBackActivity.this,"Input Not Valid",Toast.LENGTH_SHORT).show();
