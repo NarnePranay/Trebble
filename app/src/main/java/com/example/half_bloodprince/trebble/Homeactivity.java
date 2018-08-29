@@ -36,6 +36,7 @@ import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.half_bloodprince.trebble.Activities.CallActivity;
+import com.example.half_bloodprince.trebble.Fragments.HomeFragment;
 import com.example.half_bloodprince.trebble.Fragments.MainFragment;
 import com.example.half_bloodprince.trebble.Fragments.PageFragment;
 import com.example.half_bloodprince.trebble.Fragments.SupportFragment;
@@ -305,7 +306,7 @@ class SampleFragmentPagerAdapter extends FragmentPagerAdapter {
 
 
         switch (position){
-            case 0: return PageFragment.newInstance(position + 1);
+            case 0: return new HomeFragment();
             case 1: return new SupportFragment();
 
             case 2:
