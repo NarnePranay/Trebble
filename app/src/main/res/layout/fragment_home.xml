@@ -3,67 +3,132 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:fab="http://schemas.android.com/apk/res-auto"
     tools:context=".Fragments.HomeFragment">
 
-    <RelativeLayout
-        android:id="@+id/layout"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        <Space
-            android:id="@+id/spacing"
-            android:layout_width="match_parent"
-            android:layout_height="20dp" />
-        <TextView
-            android:id="@+id/title"
-            android:layout_below="@id/spacing"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Trending News"
-            android:paddingLeft="15dp"
-            android:textSize="16sp"
-            android:textColor="#3bb7f5"
-            android:fontFamily="@font/ralewaysemibold" />
-        <Space
-            android:id="@+id/space"
-            android:layout_below="@+id/title"
-            android:layout_width="match_parent"
-            android:layout_height="15dp" />
-        <ListView
-            android:id="@+id/listNews"
-            android:layout_below="@id/space"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:id="@+id/layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-        </ListView>
-        <Space
-            android:id="@+id/space2"
-            android:layout_below="@+id/listNews"
-            android:layout_width="match_parent"
-            android:layout_height="15dp" />
+            <Space
+                android:id="@+id/spacing"
+                android:layout_width="match_parent"
+                android:layout_height="20dp" />
 
-        <TextView
-            android:id="@+id/title2"
-            android:layout_width="match_parent"
+            <TextView
+                android:id="@+id/title"
+                android:layout_below="@id/spacing"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Trending News"
+                android:paddingLeft="15dp"
+                android:textSize="16sp"
+                android:textColor="#3bb7f5"
+                android:fontFamily="@font/ralewaysemibold" />
+            <Space
+                android:id="@+id/space"
+                android:layout_below="@+id/title"
+                android:layout_width="match_parent"
+                android:layout_height="15dp" />
+
+            <com.example.half_bloodprince.trebble.NonScrollListView
+                android:id="@+id/listNews"
+                android:layout_below="@id/space"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+            </com.example.half_bloodprince.trebble.NonScrollListView>
+
+            <Space
+                android:id="@+id/space2"
+                android:layout_below="@+id/listNews"
+                android:layout_width="match_parent"
+                android:layout_height="15dp" />
+
+            <TextView
+                android:id="@+id/title2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Trending Posts"
+                android:paddingLeft="15dp"
+                android:layout_below="@id/space2"
+                android:textSize="16sp"
+                android:textColor="#3bb7f5"
+                android:fontFamily="@font/ralewaysemibold" />
+
+            <Space
+                android:id="@+id/space3"
+                android:layout_below="@+id/title2"
+                android:layout_width="match_parent"
+                android:layout_height="15dp" />
+
+            <com.example.half_bloodprince.trebble.NonScrollListView
+                android:id="@+id/listPosts"
+                android:layout_below="@id/space3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+            </com.example.half_bloodprince.trebble.NonScrollListView>
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+
+    <com.github.clans.fab.FloatingActionMenu
+        android:id="@+id/fab_menu"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:paddingBottom="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        fab:menu_backgroundColor="#ccffffff"
+        fab:fab_colorNormal="#39f5a4"
+        fab:fab_colorPressed="#39f5a4"
+        fab:fab_colorRipple="#99FFFFFF"
+        fab:fab_showShadow="true"
+        fab:menu_labels_colorNormal="#333333"
+        fab:menu_labels_colorPressed="#444444"
+        fab:menu_labels_colorRipple="#66FFFFFF"
+        fab:menu_labels_showShadow="true"
+        fab:menu_labels_maxLines="-1"
+        fab:menu_labels_position="left"
+        fab:menu_openDirection="up"
+        fab:fab_shadowColor="#00FF00"
+        fab:menu_labels_ellipsize="end"
+        fab:menu_labels_singleLine="true">
+
+        <com.github.clans.fab.FloatingActionButton
+            android:id="@+id/schat"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Trending Posts"
-            android:paddingLeft="15dp"
-            android:layout_below="@id/space2"
-            android:textSize="16sp"
-            android:textColor="#3bb7f5"
-            android:fontFamily="@font/ralewaysemibold" />
-        <Space
-            android:id="@+id/space3"
-            android:layout_below="@+id/title2"
-            android:layout_width="match_parent"
-            android:layout_height="15dp" />
-        <ListView
-            android:id="@+id/listPosts"
-            android:layout_below="@id/space3"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:src="@drawable/livechat"
+            fab:fab_label="Chat"
+            fab:fab_size="mini" />
 
-        </ListView>
+        <com.github.clans.fab.FloatingActionButton
+            android:id="@+id/scall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/call"
+            fab:fab_label="Call Service Centre"
+            fab:fab_size="mini" />
 
-    </RelativeLayout>
+        <com.github.clans.fab.FloatingActionButton
+            android:id="@+id/sfeedback"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/feedback"
+            fab:fab_label="Send Feedback"
+            fab:fab_size="mini" />
+
+    </com.github.clans.fab.FloatingActionMenu>
+
 
 </FrameLayout>

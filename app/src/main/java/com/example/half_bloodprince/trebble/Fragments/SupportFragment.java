@@ -11,7 +11,10 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.android.volley.Request;
@@ -34,6 +37,9 @@ import com.google.gson.Gson;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * A simple {@link Fragment} subclass.
  */
@@ -55,6 +61,28 @@ public class SupportFragment extends Fragment {
         sharedPreferences=getContext().getSharedPreferences("MyPrefs", Context.MODE_PRIVATE);
         Uid=sharedPreferences.getString("id","Akhil");
         Log.d("Nmae/Support",Uid);
+
+
+        final Spinner spinner = (Spinner) view.findViewById(R.id.laptop_name);
+
+        // Spinner click listener
+
+
+        List<String> categories = new ArrayList<String>();
+        categories.add("Inspiron 15 7570");
+        categories.add("Inspiron 15 1879");
+
+        // Creating adapter for spinner
+        ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(getContext(), android.R.layout.simple_spinner_item, categories);
+
+        // Drop down layout style - list view with radio button
+        dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+
+        // attaching data adapter to spinner
+        spinner.setAdapter(dataAdapter);
+
+
+
 
         Button button=(Button)view.findViewById(R.id.feedback_list);
         button.setOnClickListener(new View.OnClickListener() {
@@ -132,5 +160,6 @@ public class SupportFragment extends Fragment {
 
         queue.add(stringRequest);
     }
+
 
 }

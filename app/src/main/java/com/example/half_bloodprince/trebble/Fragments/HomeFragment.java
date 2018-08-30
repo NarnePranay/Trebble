@@ -8,10 +8,13 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
 import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import com.example.half_bloodprince.trebble.Activities.CallActivity;
+import com.example.half_bloodprince.trebble.Activities.FeedBackActivity;
 import com.example.half_bloodprince.trebble.Activities.SplashScreenActivity;
 import com.example.half_bloodprince.trebble.Adapters.Community_Adapter;
 import com.example.half_bloodprince.trebble.Adapters.ListNewsAdapter;
@@ -19,6 +22,8 @@ import com.example.half_bloodprince.trebble.DetailsActivity;
 import com.example.half_bloodprince.trebble.NewsUtility;
 import com.example.half_bloodprince.trebble.POJO.PostBasic;
 import com.example.half_bloodprince.trebble.R;
+import com.github.clans.fab.FloatingActionButton;
+import com.github.clans.fab.FloatingActionMenu;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -40,6 +45,15 @@ import static com.example.half_bloodprince.trebble.Fragments.MainFragment.KEY_UR
 public class HomeFragment extends Fragment {
 
 
+    private Boolean isFabOpen=false;
+    private FloatingActionButton fab,fab1,fab2;
+    private Animation fab_open,fab_close,rotate_forward,rotate_backward;
+    private FloatingActionButton fabcall;
+    private FloatingActionButton fabchat;
+    private FloatingActionButton fabfeedback;
+    private FloatingActionMenu fam;
+
+
     public HomeFragment() {
         // Required empty public constructor
     }
@@ -50,6 +64,42 @@ public class HomeFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view =inflater.inflate(R.layout.fragment_home,container,false);
+
+        dataList.clear();
+
+        fabcall = (FloatingActionButton) view.findViewById(R.id.scall);
+        fabchat = (FloatingActionButton) view.findViewById(R.id.schat);
+        fabfeedback = (FloatingActionButton) view.findViewById(R.id.sfeedback);
+        fam = (FloatingActionMenu) view.findViewById(R.id.fab_menu);
+
+        //handling menu status (open or close)
+        fam.setOnMenuToggleListener(new FloatingActionMenu.OnMenuToggleListener() {
+            @Override
+            public void onMenuToggle(boolean opened) {
+                if (opened) {
+                    //  showToast("Menu is opened");
+                } else {
+                    // showToast("Menu is closed");
+                }
+            }
+        });
+
+        //handling each floating action button clicked
+        fabchat.setOnClickListener(onButtonClick());
+        fabfeedback.setOnClickListener(onButtonClick());
+        fabcall.setOnClickListener(onButtonClick());
+
+        fam.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (fam.isOpened()) {
+                    fam.close(true);
+                }
+            }
+        });
+
+
+
         listNews=(ListView)view.findViewById(R.id.listNews);
         listPosts=(ListView)view.findViewById(R.id.listPosts);
         if(NewsUtility.isNetworkAvailable(getActivity()))
@@ -62,7 +112,7 @@ public class HomeFragment extends Fragment {
         }
         ArrayList<PostBasic> postBasics=new ArrayList<PostBasic>();
         ArrayList<String> strings=new ArrayList<>();
-        for(int i=0;i<2;i++){
+        for(int i=0;i<4;i++){
             postBasics.add(SplashScreenActivity.postsArr.get(i));
             strings.add(SplashScreenActivity.postsArr1.get(i));
         }
@@ -92,7 +142,7 @@ public class HomeFragment extends Fragment {
                     JSONObject jsonResponse = new JSONObject(xml);
                     JSONArray jsonArray = jsonResponse.optJSONArray("articles");
 
-                    for (int i = 0; i <2; i++) {
+                    for (int i = 0; i <3; i++) {
                         JSONObject jsonObject = jsonArray.getJSONObject(i);
                         HashMap<String, String> map = new HashMap<String, String>();
                         map.put(KEY_AUTHOR, jsonObject.optString(KEY_AUTHOR).toString());
@@ -127,5 +177,28 @@ public class HomeFragment extends Fragment {
 
 
     }
+
+    private View.OnClickListener onButtonClick() {
+        return new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (view == fabcall) {
+                    startActivity(new Intent(getActivity(), CallActivity.class));
+
+                } else if (view == fabchat) {
+                   // showToast("Button chat clicked");
+                } else {
+                    startActivity(new Intent(getContext(), FeedBackActivity.class));
+
+                }
+                fam.close(true);
+            }
+        };
+    }
+
+    private void showToast(String msg) {
+        Toast.makeText(getContext(), msg, Toast.LENGTH_SHORT).show();
+    }
+
 
 }
