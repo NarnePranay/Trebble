@@ -4,6 +4,7 @@ import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.View;
 import android.widget.ListView;
 
@@ -19,10 +20,12 @@ public class FeedbackListActivity extends AppCompatActivity {
         setContentView(R.layout.activity_feedback_list);
         Toolbar myToolbar = (Toolbar) findViewById(R.id.toolbar_list);  //toolbars
         setSupportActionBar(myToolbar);
-        //myToolbar.setTitle("COMMUNITY");
+        myToolbar.setTitle("My Posts");
         myToolbar.setTitleTextColor(Color.GRAY);
+        Log.d("postGetActivity","false");
         ListView listView=(ListView)findViewById(R.id.feedback_list);
         FeedBackList_Adapter feedBackList_adapter=new FeedBackList_Adapter(SplashScreenActivity.UserPost,SplashScreenActivity.UserPost_name,FeedbackListActivity.this);
+        listView.setAdapter(feedBackList_adapter);
        // Community_Adapter community_adapter=new Community_Adapter(FeedbackListActivity.this,,SplashScreenActivity.UserPost_name);
         getSupportActionBar().setTitle("FeedBack List");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);

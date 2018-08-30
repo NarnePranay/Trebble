@@ -1,10 +1,12 @@
 package com.example.half_bloodprince.trebble.POJO;
 
+import java.io.Serializable;
+
 /**
  * Created by j.girish on 25-08-2018.
  */
 
-public class PostBasic {
+public class PostBasic implements Serializable{
 
 
      String heading;

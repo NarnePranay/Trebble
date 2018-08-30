@@ -244,21 +244,22 @@ public class SearchActivity extends AppCompatActivity {
                         char [] q=response.toCharArray();
                         String respo="";
                         check++;
-                        for(int i=1;i<q.length-2;i++)
+                        for(int i=1;i<q.length-1;i++)
                         {
                             respo+=q[i];
                         }
-                            String[]tokens=respo.split(", ");
+                            String[]tokens=respo.split(",");
                         Log.d("response ids",tokens[0]);
                             for(int i=0;i<tokens.length;i++)
                             {
                                 Log.d("response ids",tokens[i]);
-                                if(!tokens[i].contentEquals("")) {
-                                    if (hm.get(tokens[i]) != null) {
-                                        hm.put(tokens[i], hm.get(tokens[i]) + 1);
+
+                                if(!tokens[i].contentEquals("  ")) {
+                                    if (hm.get(tokens[i].replace(" ","")) != null) {
+                                        hm.put(tokens[i].replace(" ",""), hm.get(tokens[i].replace(" ","")) + 1);
                                     } else {
-                                        str1.add(tokens[i]);
-                                        hm.put(tokens[i], 1);
+                                        str1.add(tokens[i].replace(" ",""));
+                                        hm.put(tokens[i].replace(" ",""), 1);
                                         Log.d("size",str1.size()+"");
                                     }
                                 }
@@ -318,6 +319,7 @@ public class SearchActivity extends AppCompatActivity {
         final int s=size;
         final int cs=csize;
         final String check=str;
+        //str=str.replace(" ","%20");
         String url = "https://trebble-b578d.firebaseio.com/shortPosts/"+str+".json";
         RequestQueue queue = Volley.newRequestQueue(SearchActivity.this);
         StringRequest stringRequest = new StringRequest(Request.Method.GET, url,

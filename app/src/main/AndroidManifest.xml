@@ -84,8 +84,11 @@
         <activity
             android:name=".Activities.CallActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
-        <activity android:name=".Activities.FeedbackListActivity" />
-        <activity android:name=".Activities.postGetActivity"></activity>
+        <activity android:name=".Activities.FeedbackListActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"
+            />
+        <activity android:name=".Activities.postGetActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"></activity>
     </application>
 
 </manifest>

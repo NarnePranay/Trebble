@@ -159,9 +159,10 @@ void getFrequency(int position, int cs,String str) {
             new Response.Listener<String>() {
                 @Override
                 public void onResponse(String response) {
+
+                    Log.d("response", response);
                     check++;
                     int x=Integer.parseInt(response);
-                    Log.d("response", response);
                     myRef = database.getReference("tags").child(s).child("search_count");
                     myRef.setValue(x+1);
                     if(pos==check) {
